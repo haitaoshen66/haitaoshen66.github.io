@@ -1,61 +1,725 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="我的个人主页：个人介绍、研究方向与项目。">
-  <title>你的名字 | 个人主页</title>
+  <meta name="description" content="A short introduction belongs here. Introduce your current position, your background, and the research questions you care about.">
+  <meta name="theme-color" content="#fcfcfa">
+  <title>Your Name | Personal website</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' rx='12' fill='%23355d7e'/%3E%3C/svg%3E">
   <style>
-    body {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 24px;
-      font-family: system-ui, sans-serif;
-      line-height: 1.8;
-      color: #222;
-      background: #fff;
-    }
-    h1 { margin-bottom: 0; }
-    h2 {
-      margin-top: 36px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 8px;
-    }
-    a { color: #1769aa; }
-    .subtitle { color: #666; }
-    footer { margin-top: 48px; color: #777; font-size: 14px; }
-  </style>
+/* 颜色、宽度、字体等可在这里统一修改。 */
+:root {
+  --paper: #fcfcfa;
+  --surface: #f0f3f5;
+  --ink: #20272d;
+  --muted: #5e6a73;
+  --soft: #6d7881;
+  --line: #dfe5e8;
+  --accent: #355d7e;
+  --accent-light: #e9f0f5;
+  --max-width: 1040px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 102px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; font-size: 15px; line-height: 1.7; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button, a { touch-action: manipulation; }
+a:hover { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
+button { color: inherit; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; }
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+[hidden] { display: none !important; }
+::selection { background: #dce8f0; color: #1d3850; }
+.container { width: min(calc(100% - 64px), var(--max-width)); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; z-index: 50; top: -80px; left: 20px; background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 4px; }
+.skip-link:focus { top: 10px; }
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(252,252,250,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+.header-inner { height: 72px; display: flex; align-items: center; gap: 28px; }
+.brand { display: inline-flex; gap: 10px; align-items: center; font-size: 16px; font-weight: 650; letter-spacing: -.35px; white-space: nowrap; margin-right: auto; }
+.brand-mark { height: 7px; width: 7px; background: var(--accent); border-radius: 2px; transform: rotate(-8deg); flex: 0 0 auto; }
+.desktop-nav { display: flex; align-items: center; gap: 21px; }
+.nav-link { font-size: 12px; color: var(--muted); font-weight: 500; padding: 24px 0; position: relative; white-space: nowrap; }
+.nav-link[aria-current="location"] { color: var(--ink); }
+.nav-link[aria-current="location"]::after { position: absolute; content: ""; bottom: 15px; left: 0; right: 0; height: 1px; background: var(--accent); }
+.header-tools { display: flex; align-items: center; gap: 12px; }
+.language-switch { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 6px; padding: 3px; gap: 1px; }
+.language-switch button { min-width: 33px; min-height: 28px; border: 0; border-radius: 3px; background: none; color: var(--muted); font-size: 11px; font-weight: 600; line-height: 1; padding: 6px 7px; }
+.language-switch button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.language-switch button:hover:not([aria-pressed="true"]) { background: var(--accent-light); }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 5px; width: 36px; height: 36px; align-items: center; justify-content: center; }
+.menu-icon { width: 15px; display: grid; gap: 4px; }
+.menu-icon i { display: block; height: 1px; background: var(--ink); width: 15px; }
+.mobile-nav { border-top: 1px solid var(--line); padding: 12px 0 20px; }
+.mobile-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+.mobile-nav .nav-link { display: block; padding: 10px 0; font-size: 14px; }
+.mobile-nav .nav-link::after { display: none; }
+.draft-note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; color: var(--muted); font-size: 11px; padding-top: 28px; }
+.draft-pill { color: var(--accent); font-weight: 600; font-size: 10px; letter-spacing: .5px; border: 1px solid #d0dde7; padding: 2px 7px; border-radius: 3px; }
+.hero { display: grid; grid-template-columns: minmax(0,1fr) 216px; column-gap: 90px; row-gap: 18px; padding-top: 46px; padding-bottom: 63px; align-items: start; }
+.eyebrow { font-size: 10px; line-height: 1.5; font-weight: 650; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+.name-block { grid-column: 1; grid-row: 1; }
+h1 { font-size: clamp(44px, 5vw, 64px); line-height: 1.16; letter-spacing: -2.5px; font-weight: 550; margin-top: 13px; margin-bottom: 17px; overflow-wrap: anywhere; }
+.role { font-size: 16px; font-weight: 550; }
+.institution { color: var(--muted); font-size: 14px; margin-top: 3px; }
+.bio { grid-column: 1; grid-row: 2; color: var(--muted); max-width: 645px; font-size: 15px; line-height: 1.8; }
+.bio p + p { margin-top: 9px; }
+.hero-actions { grid-column: 1; grid-row: 3; padding-top: 2px; }
+.primary-links { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+.work-link { color: var(--accent); font-size: 13px; font-weight: 600; border-bottom: 1px solid #bfd0dc; padding: 5px 0; }
+.work-link span { margin-left: 9px; }
+.cv-link { display: inline-flex; align-items: center; gap: 8px; padding: 5px 11px; font-size: 12px; border: 1px solid #cfd7dd; border-radius: 5px; }
+.social-links { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 20px; margin-top: 21px; }
+.social-links a, .social-links .unavailable { font-size: 12px; }
+.link-arrow { font-size: .95em; margin-left: 3px; }
+.unavailable { color: var(--soft); cursor: default; }
+.cv-link.unavailable { border-style: dashed; }
+.portrait-shell { grid-column: 2; grid-row: 1 / span 3; padding-top: 9px; }
+.portrait-frame { aspect-ratio: 4 / 5; background: #ecf0f2; border-radius: 8px; position: relative; overflow: hidden; border: 1px solid #dde5e9; }
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 2; }
+.portrait-placeholder { height: 100%; width: 100%; position: absolute; display: flex; align-items: center; justify-content: center; }
+.portrait-placeholder::before, .portrait-placeholder::after { content: ""; position: absolute; border: 1px solid #d2dde4; border-radius: 50%; width: 124px; height: 124px; }
+.portrait-placeholder::after { width: 158px; height: 158px; border-color: #dee6eb; }
+.portrait-initials { font-size: 36px; font-weight: 450; letter-spacing: -1px; color: #6b8192; position: relative; }
+.portrait-corner { position: absolute; inset: 12px; border: 1px solid #dce4e9; border-radius: 3px; }
+.portrait-note { margin-top: 10px; display: flex; justify-content: space-between; gap: 8px; font-size: 10px; color: var(--soft); }
+.portrait-note .ratio { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.section { border-top: 1px solid var(--line); padding-top: 39px; padding-bottom: 43px; scroll-margin-top: 15px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 27px; }
+.section-number { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; color: var(--soft); letter-spacing: 1.4px; margin-bottom: 6px; }
+h2 { font-size: 27px; font-weight: 550; line-height: 1.3; letter-spacing: -.9px; }
+.section-note { font-size: 11px; line-height: 1.65; color: var(--soft); max-width: 300px; text-align: right; }
+.research-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 27px; }
+.research-item { padding-right: 22px; border-right: 1px solid var(--line); }
+.research-item:last-child { border: 0; padding-right: 0; }
+.research-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; letter-spacing: -.3px; margin-bottom: 8px; }
+.research-item p { color: var(--muted); font-size: 13px; line-height: 1.75; }
+.research-keywords { margin-top: 16px; color: var(--accent); font-size: 10px; font-weight: 500; }
+.publication { display: grid; grid-template-columns: 233px minmax(0,1fr); gap: 29px; align-items: start; padding-bottom: 26px; }
+.publication + .publication { padding-top: 25px; border-top: 1px solid var(--line); }
+.publication:last-child { padding-bottom: 0; }
+.media-frame { position: relative; aspect-ratio: 16 / 10; background: var(--surface); border: 1px solid #e0e6ea; border-radius: 6px; overflow: hidden; }
+.media-frame img { position: absolute; z-index: 2; width: 100%; height: 100%; inset: 0; object-fit: contain; padding: 8px; background: var(--surface); }
+.media-placeholder { height: 100%; width: 100%; position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; color: #5f778a; font-size: 10px; letter-spacing: .2px; }
+.media-placeholder .media-icon { opacity: .7; }
+.media-icon { width: 38px; height: 27px; border: 1px solid #9aafbf; border-radius: 3px; position: relative; }
+.media-icon::before { content: ""; position: absolute; height: 6px; width: 6px; border-radius: 50%; left: 7px; top: 6px; border: 1px solid #9aafbf; }
+.media-icon::after { content: ""; position: absolute; height: 10px; width: 17px; border-left: 1px solid #9aafbf; border-top: 1px solid #9aafbf; transform: rotate(38deg) skew(-15deg); right: 4px; bottom: 2px; }
+.media-corner { position: absolute; top: 9px; left: 11px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; color: #748591; letter-spacing: 1px; }
+.pub-meta { display: flex; align-items: center; gap: 10px; font-size: 10px; color: var(--muted); margin-bottom: 5px; }
+.pub-year { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); }
+.placeholder-tag { background: #edf0f2; padding: 0 5px; border-radius: 3px; font-size: 9px; color: var(--muted); }
+.publication h3 { font-size: 18px; font-weight: 600; letter-spacing: -.3px; line-height: 1.45; margin-bottom: 5px; overflow-wrap: anywhere; }
+.authors { font-size: 12px; color: var(--muted); }
+.venue { font-size: 11px; color: var(--accent); margin-top: 1px; }
+.pub-description { font-size: 12px; color: var(--muted); line-height: 1.75; margin-top: 9px; }
+.item-links { display: flex; gap: 8px 17px; flex-wrap: wrap; margin-top: 10px; font-size: 11px; }
+.item-links a { color: var(--accent); border-bottom: 1px solid #cbd8e2; }
+.item-links a:hover { border-bottom-color: var(--accent); }
+.project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px; }
+.project { min-width: 0; }
+.project .media-frame { aspect-ratio: 16 / 8.8; margin-bottom: 17px; }
+.project .media-frame img { object-fit: contain; padding: 0; }
+.project .media-placeholder { gap: 15px; }
+.project .media-icon { width: 44px; height: 31px; }
+.project-category { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 10px; color: var(--accent); margin-bottom: 5px; }
+.project h3 { font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px; margin-bottom: 8px; }
+.project p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+.timeline { display: grid; gap: 23px; }
+.timeline-item { display: grid; grid-template-columns: 185px 1fr; gap: 28px; }
+.timeline-date { color: var(--soft); font-size: 11px; padding-top: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.timeline-content { border-left: 1px solid var(--line); padding-left: 25px; position: relative; }
+.timeline-content::before { content: ""; width: 5px; height: 5px; background: #91a6b7; border-radius: 50%; position: absolute; top: 9px; left: -3px; }
+.timeline h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+.timeline-subtitle { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.timeline-detail { font-size: 12px; color: var(--soft); margin-top: 5px; }
+.empty-state { color: var(--muted); padding: 24px; border: 1px dashed var(--line); border-radius: 6px; font-size: 13px; }
+.site-footer { border-top: 1px solid var(--line); padding-top: 26px; padding-bottom: 36px; }
+.footer-main { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.footer-name { font-weight: 600; font-size: 13px; }
+.footer-description { color: var(--soft); font-size: 11px; margin-top: 3px; }
+.back-top { font-size: 11px; color: var(--muted); }
+.footer-meta { font-size: 10px; color: var(--soft); margin-top: 20px; }
+.noscript-note { max-width: 1040px; margin: 20px auto; padding: 12px; color: #57481e; background: #f6f0dd; font-size: 13px; }
+html[lang="zh-CN"] h1 { letter-spacing: -1px; font-size: 56px; }
+html[lang="zh-CN"] h2 { letter-spacing: 0; font-size: 25px; }
+html[lang="zh-CN"] .eyebrow { letter-spacing: 3px; }
+html[lang="zh-CN"] .bio { line-height: 1.95; }
+html[lang="zh-CN"] .desktop-nav { gap: 24px; }
+@media (min-width: 1450px) { .hero { padding-top: 54px; padding-bottom: 71px; } }
+@media (max-width: 1020px) {
+  .desktop-nav { gap: 15px; }
+  .header-inner { gap: 22px; }
+  .hero { column-gap: 55px; }
+}
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .menu-toggle { display: flex; }
+  .hero { grid-template-columns: minmax(0,1fr) 180px; column-gap: 38px; }
+  h1 { font-size: 50px; }
+  .publication { grid-template-columns: 200px minmax(0,1fr); gap: 24px; }
+  .research-grid { gap: 20px; }
+  .research-item { padding-right: 16px; }
+}
+@media (max-width: 640px) {
+  html { scroll-padding-top: 82px; }
+  .container { width: calc(100% - 40px); }
+  .header-inner { height: 62px; gap: 12px; }
+  .brand { font-size: 15px; gap: 8px; }
+  .header-tools { gap: 9px; }
+  .language-switch button { min-width: 33px; min-height: 30px; }
+  .draft-note { font-size: 10px; gap: 4px 9px; padding-top: 21px; }
+  .draft-pill { font-size: 9px; }
+  .hero { grid-template-columns: minmax(0,1fr) 106px; gap: 25px 18px; padding-top: 35px; padding-bottom: 39px; }
+  .eyebrow { font-size: 8px; letter-spacing: 1.6px; }
+  h1 { font-size: 38px; letter-spacing: -1.8px; margin-top: 9px; margin-bottom: 11px; }
+  .role { font-size: 12px; }
+  .institution { font-size: 11px; line-height: 1.65; margin-top: 5px; }
+  .portrait-shell { grid-row: 1; grid-column: 2; padding-top: 3px; }
+  .portrait-frame { border-radius: 6px; }
+  .portrait-placeholder::before { width: 66px; height: 66px; }
+  .portrait-placeholder::after { width: 86px; height: 86px; }
+  .portrait-initials { font-size: 25px; }
+  .portrait-corner { inset: 7px; }
+  .portrait-note { margin-top: 6px; font-size: 8px; }
+  .portrait-note .ratio { display: none; }
+  .bio { grid-column: 1 / -1; font-size: 13px; line-height: 1.85; }
+  .hero-actions { grid-column: 1 / -1; padding-top: 0; }
+  .primary-links { gap: 17px; }
+  .social-links { gap: 8px 20px; margin-top: 19px; }
+  .section { padding-top: 30px; padding-bottom: 33px; }
+  .section-head { align-items: flex-start; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  h2 { font-size: 25px; }
+  .section-number { font-size: 9px; }
+  .section-note { max-width: none; text-align: left; font-size: 10px; }
+  .research-grid { grid-template-columns: 1fr; gap: 20px; }
+  .research-item { border-right: 0; padding-right: 0; padding-left: 15px; border-left: 1px solid #cedae3; }
+  .research-item:last-child { border-left: 1px solid #cedae3; }
+  .research-item h3 { font-size: 15px; margin-bottom: 5px; }
+  .research-item p { font-size: 12px; }
+  .research-keywords { margin-top: 8px; }
+  .publication { grid-template-columns: 1fr; gap: 17px; padding-bottom: 24px; }
+  .publication + .publication { padding-top: 24px; }
+  .publication .media-frame { aspect-ratio: 16 / 8.5; }
+  .publication h3 { font-size: 17px; }
+  .pub-description { font-size: 12px; }
+  .item-links { margin-top: 13px; gap: 10px 21px; }
+  .project-grid { grid-template-columns: 1fr; gap: 30px; }
+  .project .media-frame { margin-bottom: 15px; }
+  .project h3 { font-size: 17px; }
+  .timeline { gap: 25px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 7px; }
+  .timeline-date { padding-left: 18px; font-size: 10px; }
+  .timeline-content { padding-left: 17px; }
+  .timeline h3 { font-size: 15px; }
+  .timeline-subtitle, .timeline-detail { font-size: 12px; }
+  .footer-main { align-items: flex-start; }
+  .footer-description { font-size: 10px; max-width: 210px; }
+  html[lang="zh-CN"] h1 { font-size: 35px; letter-spacing: -.5px; }
+  html[lang="zh-CN"] h2 { font-size: 23px; }
+}
+@media (max-width: 360px) {
+  .container { width: calc(100% - 32px); }
+  .hero { grid-template-columns: minmax(0,1fr) 86px; column-gap: 13px; }
+  h1 { font-size: 33px; }
+  html[lang="zh-CN"] h1 { font-size: 31px; }
+  .brand { font-size: 13px; }
+  .header-tools { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+@media print {
+  .site-header, .draft-note, .back-top, .footer-meta, .skip-link { display: none !important; }
+  body { background: #fff; font-size: 11px; }
+  .container { width: 100%; }
+  .hero { padding-top: 0; padding-bottom: 22px; }
+  .section { padding: 20px 0; }
+  .publication, .project, .timeline-item { break-inside: avoid; }
+  a { text-decoration: underline; }
+}
+
+</style>
+  
+  
+  
 </head>
 <body>
-  <header>
-    <h1>你的名字</h1>
-    <p class="subtitle">你的学校 / 实验室 / 职位</p>
-    <p>
-      <a href="mailto:yourname@example.com">邮箱</a> ·
-      <a href="https://github.com/yourname">GitHub</a>
-    </p>
-  </header>
+<noscript><p class="noscript-note">Language switching requires JavaScript. / 中英文切换需要启用 JavaScript。</p></noscript>
+<div id="site-root">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="#about"><span class="brand-mark" aria-hidden="true"></span>Your Name</a>
+  <nav class="desktop-nav" aria-label="Open navigation"><a class="nav-link" href="#about" aria-current="location">About</a><a class="nav-link" href="#research">Research</a><a class="nav-link" href="#publications">Publications</a><a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#education">Education</a><a class="nav-link" href="#experience">Experience</a></nav>
+  <div class="header-tools"><div class="language-switch" role="group" aria-label="Website language">
+    <button type="button" lang="en" data-set-language="en" aria-pressed="true">EN</button>
+    <button type="button" lang="zh-CN" data-set-language="zh" aria-pressed="false">中文</button>
+  </div><button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation" data-menu-toggle><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+</div><nav class="mobile-nav" id="mobile-nav" aria-label="Open navigation" hidden><div class="container"><ul><li><a class="nav-link" href="#about">About</a></li><li><a class="nav-link" href="#research">Research</a></li><li><a class="nav-link" href="#publications">Publications</a></li><li><a class="nav-link" href="#projects">Projects</a></li><li><a class="nav-link" href="#education">Education</a></li><li><a class="nav-link" href="#experience">Experience</a></li></ul></div></nav></header>
+<main class="container" id="main" tabindex="-1">
+<div class="draft-note"><span class="draft-pill">LAYOUT PREVIEW</span><span>Placeholder content · Replace before publishing your profile.</span></div>
+<section class="hero" id="about" aria-label="About">
+  <div class="name-block"><p class="eyebrow">Personal website</p><h1>Your Name</h1><p class="role">Your position / degree</p><p class="institution">Your institution · Your laboratory</p></div>
+  <div class="bio"><p>A short introduction belongs here. Introduce your current position, your background, and the research questions you care about.</p><p>Use this space to connect your interests with your work. Keep it personal, concrete, and easy to read.</p></div>
+  <div class="hero-actions"><div class="primary-links"><a class="work-link" href="#publications">View publications<span aria-hidden="true">↓</span></a><span class="unavailable cv-link" aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Curriculum vitae</span></div><div class="social-links"><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Email</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">GitHub</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Google Scholar</span></div></div>
+  <aside class="portrait-shell"><div class="portrait-frame" role="img" aria-label="Portrait placeholder">
+    <div class="portrait-placeholder" aria-hidden="true"><span class="portrait-corner"></span><span class="portrait-initials">YN</span></div>
+    
+  </div><div class="portrait-note"><span>Portrait placeholder</span><span class="ratio">4 : 5</span></div></aside>
+</section>
+<section class="section" id="research" aria-label="Research interests">
+  <div class="section-head"><div><div class="section-number" aria-hidden="true">01 / RESEARCH</div><h2>Research interests</h2></div><p class="section-note">Example topics — edit these to reflect your research.</p></div>
+  <div class="research-grid"><article class="research-item"><h3>Robot learning</h3><p>Describe the research question you focus on, and why it matters.</p><div class="research-keywords">Learning · Control</div></article><article class="research-item"><h3>Vision–language–action</h3><p>Introduce a second direction and its connection to your work.</p><div class="research-keywords">Perception · Action</div></article><article class="research-item"><h3>Generalization &amp; adaptation</h3><p>Highlight a challenge you would like to explore in more depth.</p><div class="research-keywords">Robustness · Transfer</div></article></div>
+</section>
+<section class="section" id="publications" aria-label="Selected publications">
+  <div class="section-head"><div><div class="section-number" aria-hidden="true">02 / PUBLICATIONS</div><h2>Selected publications</h2></div><p class="section-note">Space for paper figures, authors, and public links.</p></div>
+  <div class="publication-list"><article class="publication"><div class="media-frame" role="img" aria-label="Paper figure — Placeholder">
+      <div class="media-placeholder" aria-hidden="true"><span class="media-corner">01</span><span class="media-icon"></span><span>Paper figure</span></div>
+      
+    </div><div class="publication-text">
+    <div class="pub-meta"><span class="pub-year">20XX</span><span class="placeholder-tag">Placeholder</span></div>
+    <h3>Your paper title goes here</h3><p class="authors">Your Name, Co-author, Co-author</p><p class="venue">Venue / publication status</p>
+    <p class="pub-description">One or two sentences about the problem, the main idea, and the contribution. Replace the frame on the left with your paper figure.</p><div class="item-links"><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Paper</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Code</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Project</span></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="Paper figure — Placeholder">
+      <div class="media-placeholder" aria-hidden="true"><span class="media-corner">02</span><span class="media-icon"></span><span>Paper figure</span></div>
+      
+    </div><div class="publication-text">
+    <div class="pub-meta"><span class="pub-year">20XX</span><span class="placeholder-tag">Placeholder</span></div>
+    <h3>Another research contribution</h3><p class="authors">Co-author, Your Name, Co-author</p><p class="venue">Venue / publication status</p>
+    <p class="pub-description">Keep the same structure across papers. This row is a placeholder, not a publication record.</p><div class="item-links"><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Paper</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Code</span></div></div></article></div>
+</section>
+<section class="section" id="projects" aria-label="Research projects">
+  <div class="section-head"><div><div class="section-number" aria-hidden="true">03 / PROJECTS</div><h2>Research projects</h2></div><p class="section-note">A closer look at the work behind the papers.</p></div>
+  <div class="project-grid"><article class="project"><div class="media-frame" role="img" aria-label="Project screenshot — Placeholder">
+      <div class="media-placeholder" aria-hidden="true"><span class="media-corner">01</span><span class="media-icon"></span><span>Project screenshot</span></div>
+      
+    </div><div class="project-category"><span>Research / Engineering</span><span class="placeholder-tag">Placeholder</span></div><h3>Your research project</h3><p>Introduce the goal, your contribution, and what the project demonstrates. Add a screenshot or a demo cover above.</p><div class="item-links"><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Repository</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Demo</span></div></article><article class="project"><div class="media-frame" role="img" aria-label="Project screenshot — Placeholder">
+      <div class="media-placeholder" aria-hidden="true"><span class="media-corner">02</span><span class="media-icon"></span><span>Project screenshot</span></div>
+      
+    </div><div class="project-category"><span>System / Open source</span><span class="placeholder-tag">Placeholder</span></div><h3>Another project or system</h3><p>A second space for a system, a tool, or a research prototype. Remove this item when it is not needed.</p><div class="item-links"><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Repository</span><span class="unavailable " aria-disabled="true" title="Link not added yet. Edit content.js to enable it.">Demo</span></div></article></div>
+</section>
+<section class="section" id="education" aria-label="Education"><div class="section-head"><div><div class="section-number" aria-hidden="true">04 / EDUCATION</div><h2>Education</h2></div><p class="section-note">Academic background</p></div><div class="timeline"><article class="timeline-item">
+      <p class="timeline-date">20XX — Present</p><div class="timeline-content">
+      <h3>Your university</h3><p class="timeline-subtitle">Your degree · Your department</p>
+      <p class="timeline-detail">Optional: advisor, research focus, or a brief note.</p></div></article><article class="timeline-item">
+      <p class="timeline-date">20XX — 20XX</p><div class="timeline-content">
+      <h3>Previous university</h3><p class="timeline-subtitle">Your degree · Your major</p>
+      <p class="timeline-detail">Optional: add one relevant detail, or leave this line empty.</p></div></article></div></section>
+<section class="section" id="experience" aria-label="Work &amp; internships"><div class="section-head"><div><div class="section-number" aria-hidden="true">05 / EXPERIENCE</div><h2>Work &amp; internships</h2></div><p class="section-note">Research and professional experience</p></div><div class="timeline"><article class="timeline-item">
+      <p class="timeline-date">20XX — 20XX</p><div class="timeline-content">
+      <h3>Company / Research institute</h3><p class="timeline-subtitle">Your role · Your team</p>
+      <p class="timeline-detail">Summarize your responsibilities and contribution in one or two sentences.</p></div></article></div></section>
+</main>
+<footer class="container site-footer"><div class="footer-main"><div><p class="footer-name">Your Name</p><p class="footer-description">Research, projects, and a little about me.</p></div><a class="back-top" href="#about">Back to top <span aria-hidden="true">↑</span></a></div>
+<p class="footer-meta">Framework preview · All biographical and publication details are placeholders.</p></footer>
+</div>
+<div id="language-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<script>
+/*
+ * 主页内容 / Website content
+ * 日常更新只需修改本文件。每个 { en, zh } 对应英文和中文。
+ * 空链接会显示为不可点击的占位项；image / portrait 为空会显示占位图框。
+ * 重要：不要在公开仓库中放入未公开稿件、盲审信息或私人资料。
+ * visible: false 仅控制显示，不会让源文件中的内容变成私密。
+ */
+const SITE_CONTENT = {
+  settings: {
+    defaultLanguage: "en", // "en" 或 "zh"
+    showDraftNotice: true, // 填完真实公开内容后改为 false
+    updated: "", // 可选，例如 "2026-09"；留空不显示
+  },
+  profile: {
+    name: { en: "Your Name", zh: "你的名字" },
+    monogram: "YN", // 未上传头像时显示的字母
+    role: { en: "Your position / degree", zh: "你的职位 / 在读学位" },
+    institution: { en: "Your institution · Your laboratory", zh: "你的学校或单位 · 实验室" },
+    bio: [
+      {
+        en: "A short introduction belongs here. Introduce your current position, your background, and the research questions you care about.",
+        zh: "在这里用几句话介绍自己：目前所在的学校或单位、研究背景，以及你最关注的研究问题。",
+      },
+      {
+        en: "Use this space to connect your interests with your work. Keep it personal, concrete, and easy to read.",
+        zh: "接着简要介绍研究兴趣与正在探索的方向。保持具体、自然，让访客快速了解你的工作。",
+      },
+    ],
+    portrait: "", // 例如 "assets/images/avatar.jpg"
+    portraitPosition: "50% 40%", // 调整照片裁剪位置
+    portraitAlt: { en: "Portrait of Your Name", zh: "你的个人头像" },
+    links: [
+      { label: { en: "Email", zh: "邮箱" }, url: "" }, // 例如 "mailto:you@example.com"
+      { label: { en: "GitHub", zh: "GitHub" }, url: "" },
+      { label: { en: "Google Scholar", zh: "Google Scholar" }, url: "" },
+    ],
+    cv: { en: "", zh: "" }, // 例如 "assets/files/cv-en.pdf" / "assets/files/cv-zh.pdf"
+  },
+  // 下列三个方向只用于演示排版，不代表已经确定的个人介绍。
+  research: [
+    {
+      visible: true,
+      title: { en: "Robot learning", zh: "机器人学习" },
+      description: { en: "Describe the research question you focus on, and why it matters.", zh: "在这里介绍你关注的核心研究问题，以及它为什么重要。" },
+      keywords: { en: "Learning · Control", zh: "学习 · 控制" },
+    },
+    {
+      visible: true,
+      title: { en: "Vision–language–action", zh: "视觉—语言—动作" },
+      description: { en: "Introduce a second direction and its connection to your work.", zh: "介绍第二个研究方向，以及它与你现有工作的联系。" },
+      keywords: { en: "Perception · Action", zh: "感知 · 动作" },
+    },
+    {
+      visible: true,
+      title: { en: "Generalization & adaptation", zh: "泛化与适应" },
+      description: { en: "Highlight a challenge you would like to explore in more depth.", zh: "简要说明你希望进一步探索的挑战或研究目标。" },
+      keywords: { en: "Robustness · Transfer", zh: "鲁棒性 · 迁移" },
+    },
+  ],
+  publications: [
+    {
+      visible: true,
+      placeholder: true, // 添加真实公开论文后改为 false
+      year: "20XX",
+      title: { en: "Your paper title goes here", zh: "在这里填写论文标题" },
+      authors: { en: "Your Name, Co-author, Co-author", zh: "你的名字，合作者，合作者" },
+      venue: { en: "Venue / publication status", zh: "会议或期刊 / 公开发表状态" },
+      description: { en: "One or two sentences about the problem, the main idea, and the contribution. Replace the frame on the left with your paper figure.", zh: "用一两句话概括研究问题、核心方法与贡献。左侧放置论文的主要配图，让访客快速理解这项工作。" },
+      image: "", // 例如 "assets/images/paper-01.png"
+      imageAlt: { en: "Overview figure for this paper", zh: "这篇论文的主要配图" },
+      links: [
+        { label: { en: "Paper", zh: "论文" }, url: "" },
+        { label: { en: "Code", zh: "代码" }, url: "" },
+        { label: { en: "Project", zh: "项目页" }, url: "" },
+      ],
+    },
+    {
+      visible: true,
+      placeholder: true,
+      year: "20XX",
+      title: { en: "Another research contribution", zh: "另一项研究工作的论文标题" },
+      authors: { en: "Co-author, Your Name, Co-author", zh: "合作者，你的名字，合作者" },
+      venue: { en: "Venue / publication status", zh: "会议或期刊 / 公开发表状态" },
+      description: { en: "Keep the same structure across papers. This row is a placeholder, not a publication record.", zh: "每篇论文使用一致的信息结构。这一项仅用于展示列表排版，并非真实发表记录。" },
+      image: "",
+      imageAlt: { en: "Overview figure for this paper", zh: "这篇论文的主要配图" },
+      links: [
+        { label: { en: "Paper", zh: "论文" }, url: "" },
+        { label: { en: "Code", zh: "代码" }, url: "" },
+      ],
+    },
+  ],
+  projects: [
+    {
+      visible: true,
+      placeholder: true,
+      title: { en: "Your research project", zh: "你的科研项目" },
+      category: { en: "Research / Engineering", zh: "科研 / 工程实践" },
+      description: { en: "Introduce the goal, your contribution, and what the project demonstrates. Add a screenshot or a demo cover above.", zh: "简要说明项目目标、你的贡献与展示内容。上方预留项目截图或演示视频封面的空间。" },
+      image: "", // 例如 "assets/images/project-01.jpg"
+      imageAlt: { en: "Screenshot of the research project", zh: "科研项目截图" },
+      links: [
+        { label: { en: "Repository", zh: "代码仓库" }, url: "" },
+        { label: { en: "Demo", zh: "演示" }, url: "" },
+      ],
+    },
+    {
+      visible: true,
+      placeholder: true,
+      title: { en: "Another project or system", zh: "另一项项目或系统" },
+      category: { en: "System / Open source", zh: "系统 / 开源工作" },
+      description: { en: "A second space for a system, a tool, or a research prototype. Remove this item when it is not needed.", zh: "用于展示系统、工具或研究原型。内容还不多时，可以删除这一项，让页面保持简洁。" },
+      image: "",
+      imageAlt: { en: "Screenshot of the project or system", zh: "项目或系统截图" },
+      links: [
+        { label: { en: "Repository", zh: "代码仓库" }, url: "" },
+        { label: { en: "Demo", zh: "演示" }, url: "" },
+      ],
+    },
+  ],
+  education: [
+    {
+      visible: true,
+      period: { en: "20XX — Present", zh: "20XX — 至今" },
+      title: { en: "Your university", zh: "你的学校" },
+      subtitle: { en: "Your degree · Your department", zh: "在读学位 · 院系或专业" },
+      detail: { en: "Optional: advisor, research focus, or a brief note.", zh: "可选：导师、研究方向，或简短的补充说明。" },
+    },
+    {
+      visible: true,
+      period: { en: "20XX — 20XX", zh: "20XX — 20XX" },
+      title: { en: "Previous university", zh: "此前就读的学校" },
+      subtitle: { en: "Your degree · Your major", zh: "所获学位 · 所学专业" },
+      detail: { en: "Optional: add one relevant detail, or leave this line empty.", zh: "可选：保留一条相关信息，也可以将本行留空。" },
+    },
+  ],
+  experience: [
+    {
+      visible: true,
+      period: { en: "20XX — 20XX", zh: "20XX — 20XX" },
+      title: { en: "Company / Research institute", zh: "公司 / 研究机构" },
+      subtitle: { en: "Your role · Your team", zh: "你的岗位 · 所在团队" },
+      detail: { en: "Summarize your responsibilities and contribution in one or two sentences.", zh: "用一两句话概括你负责的工作、参与的研究或具体贡献。" },
+    },
+  ],
+};
 
-  <main>
-    <section>
-      <h2>关于我</h2>
-      <p>你好！我是……目前主要关注……</p>
-    </section>
-    <section>
-      <h2>研究方向</h2>
-      <p>在这里介绍你的研究兴趣，例如机器人学习、具身智能等。</p>
-    </section>
-    <section>
-      <h2>论文与项目</h2>
-      <h3>论文或项目名称</h3>
-      <p>介绍研究问题、你的工作，以及主要成果。</p>
-    </section>
-    <section>
-      <h2>教育经历</h2>
-      <p>起止年份 · 学校 · 专业 · 学位</p>
-    </section>
-  </main>
+if (typeof window !== "undefined") window.SITE_CONTENT = SITE_CONTENT;
+if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTENT;
 
-  <footer>你的名字 · 个人主页</footer>
+</script>
+<script>
+/* Layout renderer. Normal content edits belong in content.js, not here. */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  else root.HomepageRenderer = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+  const UI = {
+    en: {
+      about: "About", research: "Research", publications: "Publications", projects: "Projects", education: "Education", experience: "Experience",
+      researchTitle: "Research interests", publicationsTitle: "Selected publications", projectsTitle: "Research projects", educationTitle: "Education", experienceTitle: "Work & internships",
+      preview: "LAYOUT PREVIEW", previewNote: "Placeholder content · Replace before publishing your profile.",
+      eyebrow: "Personal website", work: "View publications", cv: "Curriculum vitae", portrait: "Portrait placeholder",
+      sample: "Placeholder", researchNote: "Example topics — edit these to reflect your research.",
+      pubNote: "Space for paper figures, authors, and public links.", projectNote: "A closer look at the work behind the papers.",
+      educationNote: "Academic background", experienceNote: "Research and professional experience",
+      paperFigure: "Paper figure", projectImage: "Project screenshot", addLink: "Link not added yet. Edit content.js to enable it.",
+      empty: "Details will be added here.", footer: "Research, projects, and a little about me.", top: "Back to top", menu: "Open navigation", closeMenu: "Close navigation",
+      skip: "Skip to main content", siteTitle: "Personal website", updated: "Updated", language: "Website language", changed: "Language changed to English",
+      technicalNote: "Framework preview · All biographical and publication details are placeholders.",
+    },
+    zh: {
+      about: "关于", research: "研究方向", publications: "论文", projects: "科研项目", education: "教育经历", experience: "工作经历",
+      researchTitle: "研究方向", publicationsTitle: "代表论文", projectsTitle: "科研项目", educationTitle: "教育经历", experienceTitle: "工作与实习",
+      preview: "框架预览", previewNote: "当前为占位内容，正式发布个人资料前请替换。",
+      eyebrow: "个人主页", work: "查看论文", cv: "个人简历", portrait: "头像占位",
+      sample: "占位示例", researchNote: "以下方向用于演示，可替换为你的真实研究兴趣。",
+      pubNote: "预留论文配图、作者信息与公开链接。", projectNote: "展示论文之外的系统、实现与探索。",
+      educationNote: "学术与教育背景", experienceNote: "研究及专业实践经历",
+      paperFigure: "论文配图", projectImage: "项目截图", addLink: "尚未添加链接，请在 content.js 中填写。",
+      empty: "具体内容将在这里补充。", footer: "研究、项目，以及关于我的一些信息。", top: "返回顶部", menu: "展开导航", closeMenu: "收起导航",
+      skip: "跳转到主要内容", siteTitle: "个人主页", updated: "更新于", language: "页面语言", changed: "已切换为中文",
+      technicalNote: "框架预览 · 所有个人经历与论文条目均为占位内容。",
+    },
+  };
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function text(value, lang) {
+    if (value == null) return "";
+    if (typeof value === "object") return String(value[lang] ?? value.en ?? value.zh ?? "");
+    return String(value);
+  }
+  function safeUrl(value) {
+    if (typeof value !== "string" || !value.trim()) return "";
+    const raw = value.trim();
+    if (/[\u0000-\u001f\\]/.test(raw)) return "";
+    try {
+      const parsed = new URL(raw, "https://homepage.invalid/");
+      return ["https:", "http:", "mailto:"].includes(parsed.protocol) ? raw : "";
+    } catch (_) { return ""; }
+  }
+  function visible(items) { return (Array.isArray(items) ? items : []).filter((item) => item.visible !== false); }
+  function link(item, lang, cssClass = "") {
+    const label = esc(text(item.label, lang));
+    const href = safeUrl(text(item.url, lang));
+    if (!href) return `<span class="unavailable ${cssClass}" aria-disabled="true" title="${esc(UI[lang].addLink)}">${label}</span>`;
+    const outside = /^(https?:)?\/\//i.test(href);
+    return `<a class="${cssClass}" href="${esc(href)}"${outside ? ' target="_blank" rel="noopener noreferrer"' : ""}>${label}<span aria-hidden="true" class="link-arrow">↗</span></a>`;
+  }
+  function links(items, lang, cssClass) { return `<div class="${cssClass}">${(items || []).map((item) => link(item, lang)).join("")}</div>`; }
+  function media(item, lang, type, index) {
+    const src = safeUrl(item.image);
+    const label = type === "paper" ? UI[lang].paperFigure : UI[lang].projectImage;
+    const alt = src ? text(item.imageAlt, lang) || label : `${label} — ${UI[lang].sample}`;
+    const num = String(index + 1).padStart(2, "0");
+    return `<div class="media-frame" role="img" aria-label="${esc(alt)}">
+      <div class="media-placeholder" aria-hidden="true"><span class="media-corner">${num}</span><span class="media-icon"></span><span>${esc(label)}</span></div>
+      ${src ? `<img src="${esc(src)}" alt="" loading="lazy" decoding="async" data-fallback-image>` : ""}
+    </div>`;
+  }
+  function sectionHead(number, title, note) {
+    return `<div class="section-head"><div><div class="section-number" aria-hidden="true">${number}</div><h2>${esc(title)}</h2></div>${note ? `<p class="section-note">${esc(note)}</p>` : ""}</div>`;
+  }
+  function timeline(items, lang) {
+    if (!items.length) return `<p class="empty-state">${esc(UI[lang].empty)}</p>`;
+    return `<div class="timeline">${items.map((item) => `<article class="timeline-item">
+      <p class="timeline-date">${esc(text(item.period, lang))}</p><div class="timeline-content">
+      <h3>${esc(text(item.title, lang))}</h3><p class="timeline-subtitle">${esc(text(item.subtitle, lang))}</p>
+      ${text(item.detail, lang) ? `<p class="timeline-detail">${esc(text(item.detail, lang))}</p>` : ""}</div></article>`).join("")}</div>`;
+  }
+  function render(data, language) {
+    const lang = language === "zh" ? "zh" : "en";
+    const ui = UI[lang];
+    const profile = data.profile;
+    const draft = data.settings.showDraftNotice;
+    const name = esc(text(profile.name, lang));
+    const sections = ["about", "research", "publications", "projects", "education", "experience"];
+    const navigation = sections.map((id) => `<a class="nav-link" href="#${id}"${id === "about" ? ' aria-current="location"' : ""}>${esc(ui[id])}</a>`).join("");
+    const portrait = safeUrl(profile.portrait);
+    const research = visible(data.research);
+    const papers = visible(data.publications);
+    const projects = visible(data.projects);
+    const cv = text(profile.cv, lang) || text(profile.cv, lang === "en" ? "zh" : "en");
+    return `<a class="skip-link" href="#main">${esc(ui.skip)}</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="#about"><span class="brand-mark" aria-hidden="true"></span>${name}</a>
+  <nav class="desktop-nav" aria-label="${esc(ui.menu)}">${navigation}</nav>
+  <div class="header-tools"><div class="language-switch" role="group" aria-label="${esc(ui.language)}">
+    <button type="button" lang="en" data-set-language="en" aria-pressed="${lang === "en"}">EN</button>
+    <button type="button" lang="zh-CN" data-set-language="zh" aria-pressed="${lang === "zh"}">中文</button>
+  </div><button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="${esc(ui.menu)}" data-menu-toggle><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+</div><nav class="mobile-nav" id="mobile-nav" aria-label="${esc(ui.menu)}" hidden><div class="container"><ul>${sections.map((id) => `<li><a class="nav-link" href="#${id}">${esc(ui[id])}</a></li>`).join("")}</ul></div></nav></header>
+<main class="container" id="main" tabindex="-1">
+${draft ? `<div class="draft-note"><span class="draft-pill">${esc(ui.preview)}</span><span>${esc(ui.previewNote)}</span></div>` : ""}
+<section class="hero" id="about" aria-label="${esc(ui.about)}">
+  <div class="name-block"><p class="eyebrow">${esc(ui.eyebrow)}</p><h1>${name}</h1><p class="role">${esc(text(profile.role, lang))}</p><p class="institution">${esc(text(profile.institution, lang))}</p></div>
+  <div class="bio">${(profile.bio || []).map((paragraph) => `<p>${esc(text(paragraph, lang))}</p>`).join("")}</div>
+  <div class="hero-actions"><div class="primary-links"><a class="work-link" href="#publications">${esc(ui.work)}<span aria-hidden="true">↓</span></a>${link({ label: ui.cv, url: cv }, lang, "cv-link")}</div>${links(profile.links, lang, "social-links")}</div>
+  <aside class="portrait-shell"><div class="portrait-frame" role="img" aria-label="${esc(portrait ? text(profile.portraitAlt, lang) : ui.portrait)}">
+    <div class="portrait-placeholder" aria-hidden="true"><span class="portrait-corner"></span><span class="portrait-initials">${esc(profile.monogram || "YN")}</span></div>
+    ${portrait ? `<img src="${esc(portrait)}" alt="" style="object-position:${esc(/^[-\d.%\s]+$/.test(profile.portraitPosition || "") ? profile.portraitPosition : "50% 40%")}" decoding="async" data-fallback-image>` : ""}
+  </div>${!portrait ? `<div class="portrait-note"><span>${esc(ui.portrait)}</span><span class="ratio">4 : 5</span></div>` : ""}</aside>
+</section>
+<section class="section" id="research" aria-label="${esc(ui.researchTitle)}">
+  ${sectionHead("01 / RESEARCH", ui.researchTitle, draft ? ui.researchNote : "")}
+  ${research.length ? `<div class="research-grid">${research.map((item) => `<article class="research-item"><h3>${esc(text(item.title, lang))}</h3><p>${esc(text(item.description, lang))}</p>${text(item.keywords, lang) ? `<div class="research-keywords">${esc(text(item.keywords, lang))}</div>` : ""}</article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
+</section>
+<section class="section" id="publications" aria-label="${esc(ui.publicationsTitle)}">
+  ${sectionHead("02 / PUBLICATIONS", ui.publicationsTitle, draft ? ui.pubNote : "")}
+  ${papers.length ? `<div class="publication-list">${papers.map((item, i) => `<article class="publication">${media(item, lang, "paper", i)}<div class="publication-text">
+    <div class="pub-meta"><span class="pub-year">${esc(item.year)}</span>${item.placeholder ? `<span class="placeholder-tag">${esc(ui.sample)}</span>` : ""}</div>
+    <h3>${esc(text(item.title, lang))}</h3><p class="authors">${esc(text(item.authors, lang))}</p><p class="venue">${esc(text(item.venue, lang))}</p>
+    <p class="pub-description">${esc(text(item.description, lang))}</p>${links(item.links, lang, "item-links")}</div></article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
+</section>
+<section class="section" id="projects" aria-label="${esc(ui.projectsTitle)}">
+  ${sectionHead("03 / PROJECTS", ui.projectsTitle, ui.projectNote)}
+  ${projects.length ? `<div class="project-grid">${projects.map((item, i) => `<article class="project">${media(item, lang, "project", i)}<div class="project-category"><span>${esc(text(item.category, lang))}</span>${item.placeholder ? `<span class="placeholder-tag">${esc(ui.sample)}</span>` : ""}</div><h3>${esc(text(item.title, lang))}</h3><p>${esc(text(item.description, lang))}</p>${links(item.links, lang, "item-links")}</article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
+</section>
+<section class="section" id="education" aria-label="${esc(ui.educationTitle)}">${sectionHead("04 / EDUCATION", ui.educationTitle, ui.educationNote)}${timeline(visible(data.education), lang)}</section>
+<section class="section" id="experience" aria-label="${esc(ui.experienceTitle)}">${sectionHead("05 / EXPERIENCE", ui.experienceTitle, ui.experienceNote)}${timeline(visible(data.experience), lang)}</section>
+</main>
+<footer class="container site-footer"><div class="footer-main"><div><p class="footer-name">${name}</p><p class="footer-description">${esc(ui.footer)}</p></div><a class="back-top" href="#about">${esc(ui.top)} <span aria-hidden="true">↑</span></a></div>
+${draft || data.settings.updated ? `<p class="footer-meta">${draft ? esc(ui.technicalNote) : ""}${draft && data.settings.updated ? " · " : ""}${data.settings.updated ? `${esc(ui.updated)} ${esc(data.settings.updated)}` : ""}</p>` : ""}</footer>`;
+  }
+  return { render, UI, text, safeUrl };
+});
+
+</script>
+<script>
+/* Small interaction layer: language switching, navigation, image fallbacks. */
+(function () {
+  "use strict";
+  const data = window.SITE_CONTENT;
+  const renderer = window.HomepageRenderer;
+  const mount = document.getElementById("site-root");
+  if (!data || !renderer || !mount) return; // Keep prerendered HTML readable.
+  const storageKey = "academic-homepage-language";
+  const valid = (value) => value === "zh" || value === "en";
+  let saved;
+  try { saved = localStorage.getItem(storageKey); } catch (_) { /* Storage may be blocked. */ }
+  const query = new URLSearchParams(window.location.search).get("lang");
+  let language = valid(query) ? query : valid(saved) ? saved : valid(data.settings.defaultLanguage) ? data.settings.defaultLanguage : "en";
+  let observer;
+  let menuOpen = false;
+
+  function setMenu(open) {
+    const button = document.querySelector("[data-menu-toggle]");
+    const navigation = document.getElementById("mobile-nav");
+    if (!button || !navigation) return;
+    menuOpen = Boolean(open);
+    navigation.hidden = !menuOpen;
+    button.setAttribute("aria-expanded", String(menuOpen));
+    button.setAttribute("aria-label", renderer.UI[language][menuOpen ? "closeMenu" : "menu"]);
+  }
+  function connectImages() {
+    document.querySelectorAll("[data-fallback-image]").forEach((image) => {
+      const fallback = () => {
+        image.hidden = true;
+        const frame = image.closest('[role="img"]');
+        if (frame) frame.setAttribute("aria-label", language === "zh" ? "图片暂不可用，显示占位框" : "Image unavailable; placeholder shown");
+      };
+      image.addEventListener("error", fallback, { once: true });
+      if (image.complete && image.naturalWidth === 0) fallback();
+    });
+  }
+  function observeSections() {
+    if (observer) observer.disconnect();
+    if (!("IntersectionObserver" in window)) return;
+    observer = new IntersectionObserver((entries) => {
+      const top = entries.filter((entry) => entry.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!top) return;
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        if (link.hash === `#${top.target.id}`) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-90px 0px -58% 0px", threshold: 0 });
+    document.querySelectorAll("main > section[id]").forEach((section) => observer.observe(section));
+  }
+  function render(nextLanguage, userTriggered = false) {
+    // Preserve the reader's section while changing text length.
+    const anchor = Array.from(document.querySelectorAll("main > section[id]")).reverse().find((el) => el.getBoundingClientRect().top <= 125);
+    const id = anchor?.id;
+    const before = anchor?.getBoundingClientRect().top;
+    const atTop = window.scrollY < 100;
+    language = nextLanguage;
+    document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+    document.title = `${renderer.text(data.profile.name, language)} | ${renderer.UI[language].siteTitle}`;
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.content = renderer.text(data.profile.bio?.[0], language);
+    mount.innerHTML = renderer.render(data, language);
+    menuOpen = false;
+    connectImages();
+    observeSections();
+    if (userTriggered) {
+      try { localStorage.setItem(storageKey, language); } catch (_) { /* Switching still works. */ }
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", language);
+        window.history.replaceState(null, "", url);
+      } catch (_) { /* Some file:// browsers restrict replaceState. */ }
+      document.querySelector(`[data-set-language="${language}"]`)?.focus({ preventScroll: true });
+      document.getElementById("language-status").textContent = renderer.UI[language].changed;
+      if (!atTop && id && before != null) {
+        const target = document.getElementById(id);
+        if (target) window.scrollBy({ top: target.getBoundingClientRect().top - before, behavior: "instant" });
+      }
+    }
+  }
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    const switcher = event.target.closest("[data-set-language]");
+    if (switcher) {
+      const next = switcher.getAttribute("data-set-language");
+      if (valid(next) && next !== language) render(next, true);
+      return;
+    }
+    if (event.target.closest("[data-menu-toggle]")) { setMenu(!menuOpen); return; }
+    const anchor = event.target.closest('a[href^="#"]');
+    if (anchor) setMenu(false);
+    else if (menuOpen && !event.target.closest(".site-header")) setMenu(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuOpen) {
+      setMenu(false);
+      document.querySelector("[data-menu-toggle]")?.focus();
+    }
+  });
+  window.addEventListener("resize", () => { if (window.innerWidth > 900 && menuOpen) setMenu(false); });
+  render(language);
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      let id;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); } catch (_) { return; }
+      document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
+    });
+  }
+})();
+
+</script>
 </body>
 </html>
