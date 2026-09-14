@@ -118,6 +118,7 @@ h2 { font-size: 27px; font-weight: 550; line-height: 1.3; letter-spacing: -.9px;
 .placeholder-tag { background: #edf0f2; padding: 0 5px; border-radius: 3px; font-size: 9px; color: var(--muted); }
 .publication h3 { font-size: 18px; font-weight: 600; letter-spacing: -.3px; line-height: 1.45; margin-bottom: 5px; overflow-wrap: anywhere; }
 .authors { font-size: 12px; color: var(--muted); }
+.author-me { color: var(--ink); font-weight: 600; }
 .venue { font-size: 11px; color: var(--accent); margin-top: 1px; }
 .pub-description { font-size: 12px; color: var(--muted); line-height: 1.75; margin-top: 9px; }
 .item-links { display: flex; gap: 8px 17px; flex-wrap: wrap; margin-top: 10px; font-size: 11px; }
@@ -265,7 +266,7 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
 
 <section class="hero" id="about" aria-label="关于">
   <div class="name-block"><p class="eyebrow">个人主页</p><h1>沈海涛</h1><p class="role">研究生</p><p class="institution">中国人民大学信息学院</p></div>
-  <div class="bio"><p>我是中国人民大学信息学院研究生，研究兴趣集中在具身智能、机器人学习、视觉-语言-动作模型以及可信图算法等方向。</p><p>近期工作关注 VLA 模型中的潜在动作监督、策略恢复与测试时验证，也关注隐私保护图搜索问题。</p></div>
+  <div class="bio"><p>我是中国人民大学信息学院研究生，研究兴趣集中在具身智能、机器人学习以及视觉-语言-动作模型等方向。</p><p>近期工作关注 VLA 模型中的潜在动作监督、策略恢复、测试时验证以及密集具身思维链监督。</p></div>
   <div class="hero-actions"><div class="primary-links"><a class="work-link" href="#publications">查看论文<span aria-hidden="true">↓</span></a><span class="unavailable cv-link" aria-disabled="true" title="尚未添加链接，请在 SITE_CONTENT 中填写。">个人简历</span></div><div class="social-links"><a class="" href="mailto:shenhaitao@ruc.edu.cn">邮箱<span aria-hidden="true" class="link-arrow">↗</span></a></div></div>
   <aside class="portrait-shell"><div class="portrait-frame" role="img" aria-label="沈海涛的个人头像">
     <div class="portrait-placeholder" aria-hidden="true"><span class="portrait-corner"></span><span class="portrait-initials">HS</span></div>
@@ -274,7 +275,7 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
 </section>
 <section class="section" id="research" aria-label="研究方向">
   <div class="section-head"><div><div class="section-number" aria-hidden="true">01 / RESEARCH</div><h2>研究方向</h2></div></div>
-  <div class="research-grid"><article class="research-item"><h3>具身智能与 VLA 模型</h3><p>关注面向具身智能体的视觉-语言-动作模型，包括潜在动作监督、动作 token 表示，以及感知、规划与底层控制之间的连接。</p><div class="research-keywords">视觉-语言-动作 · 机器人学习</div></article><article class="research-item"><h3>机器人操作</h3><p>研究通用机器人操作策略，尤其关注以交互为中心的表示与策略学习如何支持跨任务的稳健双指操作。</p><div class="research-keywords">机器人操作 · 策略学习</div></article><article class="research-item"><h3>隐私保护图算法</h3><p>同时关注隐私保护图搜索问题，包括在隐私约束下基于扩散模型的群体 Steiner 树搜索方法。</p><div class="research-keywords">图搜索 · 隐私保护 · 扩散模型</div></article></div>
+  <div class="research-grid"><article class="research-item"><h3>具身智能与 VLA 模型</h3><p>关注面向具身智能体的视觉-语言-动作模型，包括潜在动作监督、动作 token 表示，以及感知、规划与底层控制之间的连接。</p><div class="research-keywords">视觉-语言-动作 · 机器人学习</div></article><article class="research-item"><h3>机器人操作</h3><p>研究通用机器人操作策略，尤其关注以交互为中心的表示与策略学习如何支持跨任务的稳健双指操作。</p><div class="research-keywords">机器人操作 · 策略学习</div></article><article class="research-item"><h3>策略恢复与测试时验证</h3><p>研究机器人策略在 clean-start 评估之外的行为，包括从执行偏差中恢复，以及测试时对候选动作进行验证。</p><div class="research-keywords">恢复能力 · 验证 · 评测</div></article></div>
 </section>
 <section class="section" id="publications" aria-label="代表论文">
   <div class="section-head"><div><div class="section-number" aria-hidden="true">02 / PUBLICATIONS</div><h2>代表论文</h2></div></div>
@@ -283,38 +284,38 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
       <img src="assets/images/publications/from-pixels-to-tokens.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
-    <h3>From Pixels to Tokens: A Systematic Study of Latent Action Supervision for Vision-Language-Action Models</h3><p class="authors">Yihan Lin, Haoyang Li, Yang Li, 沈海涛, Yihan Zhao, Chao Shao, Jing Zhang</p><p class="venue">ICML 2026 Spotlight</p>
+    <h3>From Pixels to Tokens: A Systematic Study of Latent Action Supervision for Vision-Language-Action Models</h3><p class="authors">Yihan Lin, Haoyang Li, Yang Li, <span class="author-me">沈海涛</span>, Yihan Zhao, Chao Shao, Jing Zhang</p><p class="venue">ICML 2026 Spotlight</p>
     <p class="pub-description">系统研究 VLA 模型中的潜在动作监督，在统一基线下比较基于图像和基于动作的 latent action 方案。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=VMsumctGvg" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a><a class="" href="https://github.com/RUCKBReasoning/From_Pixels_to_Tokens" target="_blank" rel="noopener noreferrer">代码<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="ZR-0 论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">02</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/zr0.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
-    <h3>Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision</h3><p class="authors">Haoyang Li, Guanlin Li, Youhe Feng, Chen Zhao, Zhuoran Wang, Yang Li, Qizhe Wei, Shifeng Bao, 沈海涛, Yihan Zhao, Tong Yang, Jing Zhang</p><p class="venue">arXiv 2026</p>
+    <h3>Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision</h3><p class="authors">Haoyang Li, Guanlin Li, Youhe Feng, Chen Zhao, Zhuoran Wang, Yang Li, Qizhe Wei, Shifeng Bao, <span class="author-me">沈海涛</span>, Yihan Zhao, Tong Yang, Jing Zhang</p><p class="venue">arXiv 2026</p>
     <p class="pub-description">ZR-0 是一个 2.6B 端到端 VLA 模型，通过密集具身思维链监督进行训练，面向跨本体机器人学习。</p><div class="item-links"><a class="" href="https://arxiv.org/abs/2606.30552" target="_blank" rel="noopener noreferrer">arXiv<span aria-hidden="true" class="link-arrow">↗</span></a><a class="" href="https://github.com/RUCKBReasoning/ZR-0" target="_blank" rel="noopener noreferrer">代码<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="测试时验证 VLA 策略论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">03</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/flow-support-weighted-proposals.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
-    <h3>Flow-Support-Weighted Proposals for Test-Time Verified VLA Policies</h3><p class="authors">Chen Zhao, Zipeng Ye, 沈海涛, Guanlin Li, Yuchen Xie, Jing Zhang</p><p class="venue">AAAI 2027 投稿</p>
+    <h3>Flow-Support-Weighted Proposals for Test-Time Verified VLA Policies</h3><p class="authors">Chen Zhao, Zipeng Ye, <span class="author-me">沈海涛</span>, Guanlin Li, Yuchen Xie, Jing Zhang</p><p class="venue">AAAI 2027 投稿</p>
     <p class="pub-description">该工作研究测试时验证的 VLA 策略，通过 flow-support-weighted proposals 提升动作多样性，同时保持动作正确性。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=wKgzf8334Q" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="RoboRecover 论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">04</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/roborecover.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
-    <h3>RoboRecover: Benchmarking Robot Policy Recovery under Execution Deviations</h3><p class="authors">Yang Li, Chen Zhao, Zhuoran Wang, Jiankang Wang, Chao Shao, Yihan Lin, 沈海涛, Jing Zhang</p><p class="venue">AAAI 2027 投稿</p>
+    <h3>RoboRecover: Benchmarking Robot Policy Recovery under Execution Deviations</h3><p class="authors">Yang Li, Chen Zhao, Zhuoran Wang, Jiankang Wang, Chao Shao, Yihan Lin, <span class="author-me">沈海涛</span>, Jing Zhang</p><p class="venue">AAAI 2027 投稿</p>
     <p class="pub-description">RoboRecover 评测机器人策略从执行偏差导致的中间状态中恢复的能力，补充传统 clean-start 成功率评估。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=qnnQlLWxCr" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="DP-GST 论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">05</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/dp-gst.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
-    <h3>DP-GST: Diffusion-based Privacy-preserving Group Steiner Tree Search</h3><p class="authors">Jiakang Li, 沈海涛, Yahui Sun, Xiaoyao Feng, Xiaoqing Xiang, Wei Lu</p><p class="venue">AAAI 2027 投稿</p>
+    <h3>DP-GST: Diffusion-based Privacy-preserving Group Steiner Tree Search</h3><p class="authors">Jiakang Li, <span class="author-me">沈海涛</span>, Yahui Sun, Xiaoyao Feng, Xiaoqing Xiang, Wei Lu</p><p class="venue">AAAI 2027 投稿</p>
     <p class="pub-description">DP-GST 将图神经网络与扩散建模结合，用于差分隐私约束下的隐私保护群体 Steiner 树搜索。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=5cgTg7eKPM" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article></div>
 </section>
 
 <section class="section" id="education" aria-label="教育经历"><div class="section-head"><div><div class="section-number" aria-hidden="true">03 / EDUCATION</div><h2>教育经历</h2></div><p class="section-note">学术与教育背景</p></div><div class="timeline"><article class="timeline-item">
       <p class="timeline-date">2026.9 - 至今</p><div class="timeline-content">
       <h3>中国人民大学</h3><p class="timeline-subtitle">信息学院研究生</p>
-      <p class="timeline-detail">研究兴趣包括具身智能、VLA 模型、机器人学习与可信图算法。</p></div></article><article class="timeline-item">
+      <p class="timeline-detail">研究兴趣包括具身智能、VLA 模型、机器人学习与策略评测。</p></div></article><article class="timeline-item">
       <p class="timeline-date">2022.9 - 2026.6</p><div class="timeline-content">
       <h3>中国人民大学</h3><p class="timeline-subtitle">信息学院图灵实验班本科生</p>
       <p class="timeline-detail">GPA：3.76/4.00。已保研至中国人民大学信息学院。</p></div></article></div></section>
@@ -354,12 +355,12 @@ const SITE_CONTENT = {
     },
     "bio": [
       {
-        "en": "I am a graduate student at the School of Information, Renmin University of China, with research interests in embodied intelligence, robot learning, vision-language-action models, and trustworthy graph algorithms.",
-        "zh": "我是中国人民大学信息学院研究生，研究兴趣集中在具身智能、机器人学习、视觉-语言-动作模型以及可信图算法等方向。"
+        "en": "I am a graduate student at the School of Information, Renmin University of China, with research interests in embodied intelligence, robot learning, and vision-language-action models.",
+        "zh": "我是中国人民大学信息学院研究生，研究兴趣集中在具身智能、机器人学习以及视觉-语言-动作模型等方向。"
       },
       {
-        "en": "My recent work studies latent action supervision, policy recovery and test-time verification for VLA models, as well as privacy-preserving graph search.",
-        "zh": "近期工作关注 VLA 模型中的潜在动作监督、策略恢复与测试时验证，也关注隐私保护图搜索问题。"
+        "en": "My recent work studies latent action supervision, policy recovery, test-time verification, and dense embodied chain-of-thought supervision for VLA models.",
+        "zh": "近期工作关注 VLA 模型中的潜在动作监督、策略恢复、测试时验证以及密集具身思维链监督。"
       }
     ],
     "portrait": "assets/images/avatar.jpg",
@@ -416,16 +417,16 @@ const SITE_CONTENT = {
     {
       "visible": true,
       "title": {
-        "en": "Privacy-preserving graph algorithms",
-        "zh": "隐私保护图算法"
+        "en": "Policy recovery and test-time verification",
+        "zh": "策略恢复与测试时验证"
       },
       "description": {
-        "en": "I also work on privacy-preserving graph search, including diffusion-based methods for group Steiner tree search under privacy constraints.",
-        "zh": "同时关注隐私保护图搜索问题，包括在隐私约束下基于扩散模型的群体 Steiner 树搜索方法。"
+        "en": "I study how robot policies behave beyond clean-start evaluation, including recovery from execution deviations and test-time candidate action verification.",
+        "zh": "研究机器人策略在 clean-start 评估之外的行为，包括从执行偏差中恢复，以及测试时对候选动作进行验证。"
       },
       "keywords": {
-        "en": "Graph search · Privacy · Diffusion models",
-        "zh": "图搜索 · 隐私保护 · 扩散模型"
+        "en": "Recovery · Verification · Evaluation",
+        "zh": "恢复能力 · 验证 · 评测"
       }
     }
   ],
@@ -637,8 +638,8 @@ const SITE_CONTENT = {
         "zh": "信息学院研究生"
       },
       "detail": {
-        "en": "Research interests include embodied intelligence, VLA models, robot learning, and trustworthy graph algorithms.",
-        "zh": "研究兴趣包括具身智能、VLA 模型、机器人学习与可信图算法。"
+        "en": "Research interests include embodied intelligence, VLA models, robot learning, and policy evaluation.",
+        "zh": "研究兴趣包括具身智能、VLA 模型、机器人学习与策略评测。"
       }
     },
     {
@@ -731,6 +732,10 @@ if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTE
     return `<a class="${cssClass}" href="${esc(href)}"${outside ? ' target="_blank" rel="noopener noreferrer"' : ""}>${label}<span aria-hidden="true" class="link-arrow">↗</span></a>`;
   }
   function links(items, lang, cssClass) { return `<div class="${cssClass}">${(items || []).map((item) => link(item, lang)).join("")}</div>`; }
+  function authors(value, lang) {
+    const raw = text(value, lang);
+    return esc(raw).replace(/Haitao Shen|沈海涛/g, (match) => `<span class="author-me">${match}</span>`);
+  }
   function media(item, lang, type, index) {
     const src = safeUrl(item.image);
     const label = type === "paper" ? UI[lang].paperFigure : UI[lang].projectImage;
@@ -798,7 +803,7 @@ ${draft ? `<div class="draft-note"><span class="draft-pill">${esc(ui.preview)}</
   ${sectionHead(sectionNumber("publications"), ui.publicationsTitle, draft ? ui.pubNote : "")}
   ${papers.length ? `<div class="publication-list">${papers.map((item, i) => `<article class="publication">${media(item, lang, "paper", i)}<div class="publication-text">
     <div class="pub-meta"><span class="pub-year">${esc(item.year)}</span>${item.placeholder ? `<span class="placeholder-tag">${esc(ui.sample)}</span>` : ""}</div>
-    <h3>${esc(text(item.title, lang))}</h3><p class="authors">${esc(text(item.authors, lang))}</p><p class="venue">${esc(text(item.venue, lang))}</p>
+    <h3>${esc(text(item.title, lang))}</h3><p class="authors">${authors(item.authors, lang)}</p><p class="venue">${esc(text(item.venue, lang))}</p>
     <p class="pub-description">${esc(text(item.description, lang))}</p>${links(item.links, lang, "item-links")}</div></article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
 </section>
 ${projects.length ? `<section class="section" id="projects" aria-label="${esc(ui.projectsTitle)}">
