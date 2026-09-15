@@ -141,6 +141,10 @@ h2 { font-size: 27px; font-weight: 550; line-height: 1.3; letter-spacing: -.9px;
 .timeline h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
 .timeline-subtitle { font-size: 12px; color: var(--muted); margin-top: 3px; }
 .timeline-detail { font-size: 12px; color: var(--soft); margin-top: 5px; }
+.honors-timeline .timeline-content { display: grid; grid-template-columns: 128px minmax(0,1fr); gap: 18px; align-items: start; }
+.honor-image { aspect-ratio: 4 / 3; background: var(--surface); border: 1px solid #e0e6ea; border-radius: 6px; overflow: hidden; }
+.honor-image img { width: 100%; height: 100%; object-fit: cover; }
+.honor-copy { min-width: 0; }
 .empty-state { color: var(--muted); padding: 24px; border: 1px dashed var(--line); border-radius: 6px; font-size: 13px; }
 .site-footer { border-top: 1px solid var(--line); padding-top: 26px; padding-bottom: 36px; }
 .footer-main { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
@@ -219,6 +223,8 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
   .timeline-item { grid-template-columns: 1fr; gap: 7px; }
   .timeline-date { padding-left: 18px; font-size: 10px; }
   .timeline-content { padding-left: 17px; }
+  .honors-timeline .timeline-content { grid-template-columns: 1fr; gap: 13px; }
+  .honor-image { aspect-ratio: 16 / 9; }
   .timeline h3 { font-size: 15px; }
   .timeline-subtitle, .timeline-detail { font-size: 12px; }
   .footer-main { align-items: flex-start; }
@@ -317,16 +323,19 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
     <h3>DP-GST: Diffusion-based Privacy-preserving Group Steiner Tree Search</h3><p class="authors">Jiakang Li, <span class="author-me">沈海涛</span>, Yahui Sun, Xiaoyao Feng, Xiaoqing Xiang, Wei Lu</p><p class="venue">AAAI 2027 投稿</p>
     <p class="pub-description">DP-GST 将图神经网络与扩散建模结合，用于差分隐私约束下的隐私保护群体 Steiner 树搜索。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=5cgTg7eKPM" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article></div>
 </section>
-<section class="section" id="honors" aria-label="荣誉奖项"><div class="section-head"><div><div class="section-number" aria-hidden="true">03 / HONORS</div><h2>荣誉奖项</h2></div><p class="section-note">机器人竞赛与相关奖项。</p></div><div class="timeline"><article class="timeline-item">
+<section class="section" id="honors" aria-label="荣誉奖项"><div class="section-head"><div><div class="section-number" aria-hidden="true">03 / HONORS</div><h2>荣誉奖项</h2></div><p class="section-note">机器人竞赛与相关奖项。</p></div><div class="timeline honors-timeline"><article class="timeline-item">
       <p class="timeline-date">2026</p><div class="timeline-content">
-      <h3>第二届世界人形机器人运动会</h3><p class="timeline-subtitle">投壶 - 银牌、铜牌</p>
-      <p class="timeline-detail">在投壶项目中获得银牌和铜牌。</p></div></article><article class="timeline-item">
+      <figure class="honor-image"><img src="assets/images/honors/world-humanoid-robot-games-2026-pitch-pot.jpg" alt="第二届世界人形机器人运动会投壶项目现场" loading="lazy" decoding="async" style="object-position:50% 50%" data-fallback-image></figure>
+      <div class="honor-copy"><h3>第二届世界人形机器人运动会</h3><p class="timeline-subtitle">投壶 - 银牌、铜牌</p>
+      <p class="timeline-detail">在投壶项目中获得银牌和铜牌。</p></div></div></article><article class="timeline-item">
       <p class="timeline-date">2026</p><div class="timeline-content">
-      <h3>第二届世界人形机器人运动会</h3><p class="timeline-subtitle">拔河 - 铜牌</p>
-      <p class="timeline-detail">在拔河项目中获得铜牌。</p></div></article><article class="timeline-item">
+      <figure class="honor-image"><img src="assets/images/honors/world-humanoid-robot-games-2026-tug-of-war.jpg" alt="第二届世界人形机器人运动会拔河项目现场" loading="lazy" decoding="async" style="object-position:50% 48%" data-fallback-image></figure>
+      <div class="honor-copy"><h3>第二届世界人形机器人运动会</h3><p class="timeline-subtitle">拔河 - 铜牌</p>
+      <p class="timeline-detail">在拔河项目中获得铜牌。</p></div></div></article><article class="timeline-item">
       <p class="timeline-date">2025</p><div class="timeline-content">
-      <h3>首届世界人形机器人运动会</h3><p class="timeline-subtitle">场景赛-拆药分装 - 银牌</p>
-      <p class="timeline-detail">在场景赛拆药分装项目中获得银牌。</p></div></article></div></section>
+      <figure class="honor-image"><img src="assets/images/honors/world-humanoid-robot-games-2025-medicine.jpg" alt="首届世界人形机器人运动会场景赛拆药分装项目现场" loading="lazy" decoding="async" style="object-position:50% 40%" data-fallback-image></figure>
+      <div class="honor-copy"><h3>首届世界人形机器人运动会</h3><p class="timeline-subtitle">场景赛-拆药分装 - 银牌</p>
+      <p class="timeline-detail">在场景赛拆药分装项目中获得银牌。</p></div></div></article></div></section>
 
 <section class="section" id="education" aria-label="教育经历"><div class="section-head"><div><div class="section-number" aria-hidden="true">04 / EDUCATION</div><h2>教育经历</h2></div><p class="section-note">学术与教育背景</p></div><div class="timeline"><article class="timeline-item">
       <p class="timeline-date">2026.9 - 至今</p><div class="timeline-content">
@@ -682,7 +691,13 @@ const SITE_CONTENT = {
       "detail": {
         "en": "Awarded in the Pitch-pot event.",
         "zh": "在投壶项目中获得银牌和铜牌。"
-      }
+      },
+      "image": "assets/images/honors/world-humanoid-robot-games-2026-pitch-pot.jpg",
+      "imageAlt": {
+        "en": "Pitch-pot event at the 2nd World Humanoid Robot Games",
+        "zh": "第二届世界人形机器人运动会投壶项目现场"
+      },
+      "imagePosition": "50% 50%"
     },
     {
       "visible": true,
@@ -701,7 +716,13 @@ const SITE_CONTENT = {
       "detail": {
         "en": "Awarded in the Tug-of-War event.",
         "zh": "在拔河项目中获得铜牌。"
-      }
+      },
+      "image": "assets/images/honors/world-humanoid-robot-games-2026-tug-of-war.jpg",
+      "imageAlt": {
+        "en": "Tug-of-War event at the 2nd World Humanoid Robot Games",
+        "zh": "第二届世界人形机器人运动会拔河项目现场"
+      },
+      "imagePosition": "50% 48%"
     },
     {
       "visible": true,
@@ -720,7 +741,13 @@ const SITE_CONTENT = {
       "detail": {
         "en": "Awarded in the medicine sorting and packaging scenario-based event.",
         "zh": "在场景赛拆药分装项目中获得银牌。"
-      }
+      },
+      "image": "assets/images/honors/world-humanoid-robot-games-2025-medicine.jpg",
+      "imageAlt": {
+        "en": "Medicine sorting and packaging scenario-based event at the 1st World Humanoid Robot Games",
+        "zh": "首届世界人形机器人运动会场景赛拆药分装项目现场"
+      },
+      "imagePosition": "50% 40%"
     }
   ],
   "projects": [],
@@ -858,6 +885,18 @@ if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTE
       <h3>${esc(text(item.title, lang))}</h3><p class="timeline-subtitle">${esc(text(item.subtitle, lang))}</p>
       ${text(item.detail, lang) ? `<p class="timeline-detail">${esc(text(item.detail, lang))}</p>` : ""}</div></article>`).join("")}</div>`;
   }
+  function honorsTimeline(items, lang) {
+    if (!items.length) return `<p class="empty-state">${esc(UI[lang].empty)}</p>`;
+    return `<div class="timeline honors-timeline">${items.map((item) => {
+      const src = safeUrl(item.image);
+      const position = /^[-\d.%\s]+$/.test(item.imagePosition || "") ? item.imagePosition : "50% 50%";
+      return `<article class="timeline-item">
+      <p class="timeline-date">${esc(text(item.period, lang))}</p><div class="timeline-content">
+      ${src ? `<figure class="honor-image"><img src="${esc(src)}" alt="${esc(text(item.imageAlt, lang) || text(item.title, lang))}" loading="lazy" decoding="async" style="object-position:${esc(position)}" data-fallback-image></figure>` : ""}
+      <div class="honor-copy"><h3>${esc(text(item.title, lang))}</h3><p class="timeline-subtitle">${esc(text(item.subtitle, lang))}</p>
+      ${text(item.detail, lang) ? `<p class="timeline-detail">${esc(text(item.detail, lang))}</p>` : ""}</div></div></article>`;
+    }).join("")}</div>`;
+  }
   function render(data, language) {
     const lang = language === "zh" ? "zh" : "en";
     const ui = UI[lang];
@@ -910,7 +949,7 @@ ${draft ? `<div class="draft-note"><span class="draft-pill">${esc(ui.preview)}</
     <h3>${esc(text(item.title, lang))}</h3><p class="authors">${authors(item.authors, lang)}</p><p class="venue">${esc(text(item.venue, lang))}</p>
     <p class="pub-description">${esc(text(item.description, lang))}</p>${links(item.links, lang, "item-links")}</div></article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
 </section>
-${honors.length ? `<section class="section" id="honors" aria-label="${esc(ui.honorsTitle)}">${sectionHead(sectionNumber("honors"), ui.honorsTitle, ui.honorsNote)}${timeline(honors, lang)}</section>` : ""}
+${honors.length ? `<section class="section" id="honors" aria-label="${esc(ui.honorsTitle)}">${sectionHead(sectionNumber("honors"), ui.honorsTitle, ui.honorsNote)}${honorsTimeline(honors, lang)}</section>` : ""}
 ${projects.length ? `<section class="section" id="projects" aria-label="${esc(ui.projectsTitle)}">
   ${sectionHead(sectionNumber("projects"), ui.projectsTitle, ui.projectNote)}
   <div class="project-grid">${projects.map((item, i) => `<article class="project">${media(item, lang, "project", i)}<div class="project-category"><span>${esc(text(item.category, lang))}</span>${item.placeholder ? `<span class="placeholder-tag">${esc(ui.sample)}</span>` : ""}</div><h3>${esc(text(item.title, lang))}</h3><p>${esc(text(item.description, lang))}</p>${links(item.links, lang, "item-links")}</article>`).join("")}</div>
