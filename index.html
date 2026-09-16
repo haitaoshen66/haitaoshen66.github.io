@@ -4,248 +4,236 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="沈海涛，中国人民大学信息学院研究生，研究兴趣包括具身智能、机器人学习与 VLA 模型。">
-  <meta name="theme-color" content="#fcfcfa">
+  <meta name="theme-color" content="#f5f5f7">
   <title>沈海涛 | 个人主页</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' rx='12' fill='%23355d7e'/%3E%3C/svg%3E">
   <style>
-/* 颜色、宽度、字体等可在这里统一修改。 */
 :root {
-  --paper: #fcfcfa;
-  --surface: #f0f3f5;
-  --ink: #20272d;
-  --muted: #5e6a73;
-  --soft: #6d7881;
-  --line: #dfe5e8;
-  --accent: #355d7e;
-  --accent-light: #e9f0f5;
-  --max-width: 1040px;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --page-bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-soft: #f8f9fb;
+  --ink: #1d1d1f;
+  --muted: #51545a;
+  --meta: #646871;
+  --line: #e4e6ea;
+  --accent: #245f9e;
+  --accent-soft: #ecf3fa;
+  --shadow-soft: 0 10px 32px rgb(20 30 50 / 5%);
+  --content-max: 1120px;
+  --radius: 8px;
+  --header-height: 64px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 102px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; font-size: 15px; line-height: 1.7; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { font: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { margin: 0; background: var(--page-bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.75; }
+button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+button { color: inherit; cursor: pointer; font: inherit; }
 a { color: inherit; text-decoration: none; }
-button, a { touch-action: manipulation; }
 a:hover { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
-button { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
 img { display: block; max-width: 100%; }
-button { cursor: pointer; }
-h1, h2, h3, p { margin: 0; }
+h1, h2, h3, p, figure { margin: 0; }
 ul { margin: 0; padding: 0; list-style: none; }
 [hidden] { display: none !important; }
-::selection { background: #dce8f0; color: #1d3850; }
-.container { width: min(calc(100% - 64px), var(--max-width)); margin-inline: auto; }
+::selection { background: #d9e8f5; color: var(--ink); }
+.container { width: min(calc(100% - 64px), var(--content-max)); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.skip-link { position: fixed; z-index: 50; top: -80px; left: 20px; background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 4px; }
-.skip-link:focus { top: 10px; }
-.site-header { position: sticky; top: 0; z-index: 20; background: rgba(252,252,250,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
-.header-inner { height: 72px; display: flex; align-items: center; gap: 28px; }
-.brand { display: inline-flex; gap: 10px; align-items: center; font-size: 16px; font-weight: 650; letter-spacing: -.35px; white-space: nowrap; margin-right: auto; }
-.brand-mark { height: 7px; width: 7px; background: var(--accent); border-radius: 2px; transform: rotate(-8deg); flex: 0 0 auto; }
-.desktop-nav { display: flex; align-items: center; gap: 21px; }
-.nav-link { font-size: 12px; color: var(--muted); font-weight: 500; padding: 24px 0; position: relative; white-space: nowrap; }
+.skip-link { position: fixed; z-index: 50; top: -80px; left: 20px; background: var(--ink); color: #fff; padding: 10px 18px; border-radius: var(--radius); }
+.skip-link:focus { top: 12px; }
+.site-header { position: sticky; top: 0; z-index: 20; background: rgb(255 255 255 / 88%); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); }
+.header-inner { height: var(--header-height); display: flex; align-items: center; gap: 28px; }
+.brand { display: inline-flex; gap: 10px; align-items: center; margin-right: auto; white-space: nowrap; font-size: 16px; font-weight: 650; }
+.brand-mark { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: 0 0 auto; }
+.desktop-nav { display: flex; align-items: center; gap: 28px; }
+.nav-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
 .nav-link[aria-current="location"] { color: var(--ink); }
-.nav-link[aria-current="location"]::after { position: absolute; content: ""; bottom: 15px; left: 0; right: 0; height: 1px; background: var(--accent); }
+.nav-link[aria-current="location"]::after { position: absolute; content: ""; left: 0; right: 0; bottom: 7px; height: 2px; border-radius: 999px; background: var(--accent); }
 .header-tools { display: flex; align-items: center; gap: 12px; }
-.language-switch { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 6px; padding: 3px; gap: 1px; }
-.language-switch button { min-width: 33px; min-height: 28px; border: 0; border-radius: 3px; background: none; color: var(--muted); font-size: 11px; font-weight: 600; line-height: 1; padding: 6px 7px; }
-.language-switch button[aria-pressed="true"] { background: var(--ink); color: #fff; }
-.language-switch button:hover:not([aria-pressed="true"]) { background: var(--accent-light); }
-.menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 5px; width: 36px; height: 36px; align-items: center; justify-content: center; }
-.menu-icon { width: 15px; display: grid; gap: 4px; }
-.menu-icon i { display: block; height: 1px; background: var(--ink); width: 15px; }
-.mobile-nav { border-top: 1px solid var(--line); padding: 12px 0 20px; }
-.mobile-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
-.mobile-nav .nav-link { display: block; padding: 10px 0; font-size: 14px; }
+.language-switch { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.language-switch button { min-width: 44px; min-height: 36px; border: 0; border-radius: 6px; background: none; color: var(--muted); font-size: 13px; font-weight: 600; line-height: 1; }
+.language-switch button[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); }
+.menu-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.menu-icon { width: 17px; display: grid; gap: 5px; }
+.menu-icon i { display: block; height: 1px; width: 17px; background: var(--ink); }
+.mobile-nav { border-top: 1px solid var(--line); padding: 10px 0 18px; background: var(--surface); }
+.mobile-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 24px; }
+.mobile-nav .nav-link { display: flex; min-height: 44px; font-size: 15px; }
 .mobile-nav .nav-link::after { display: none; }
-.draft-note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; color: var(--muted); font-size: 11px; padding-top: 28px; }
-.draft-pill { color: var(--accent); font-weight: 600; font-size: 10px; letter-spacing: .5px; border: 1px solid #d0dde7; padding: 2px 7px; border-radius: 3px; }
-.hero { display: grid; grid-template-columns: minmax(0,1fr) 216px; column-gap: 90px; row-gap: 18px; padding-top: 46px; padding-bottom: 63px; align-items: start; }
-.eyebrow { font-size: 10px; line-height: 1.5; font-weight: 650; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
-.name-block { grid-column: 1; grid-row: 1; }
-h1 { font-size: clamp(44px, 5vw, 64px); line-height: 1.16; letter-spacing: -2.5px; font-weight: 550; margin-top: 13px; margin-bottom: 17px; overflow-wrap: anywhere; }
-.role { font-size: 16px; font-weight: 550; }
-.institution { color: var(--muted); font-size: 14px; margin-top: 3px; }
-.bio { grid-column: 1; grid-row: 2; color: var(--muted); max-width: 645px; font-size: 15px; line-height: 1.8; }
-.bio p + p { margin-top: 9px; }
-.hero-actions { grid-column: 1; grid-row: 3; padding-top: 2px; }
-.primary-links { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
-.work-link { color: var(--accent); font-size: 13px; font-weight: 600; border-bottom: 1px solid #bfd0dc; padding: 5px 0; }
+.draft-note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; color: var(--muted); font-size: 13px; padding-top: 28px; }
+.draft-pill { color: var(--accent); font-weight: 650; font-size: 12px; border: 1px solid #cfddeb; padding: 2px 8px; border-radius: 6px; }
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 58%) minmax(300px, 1fr); column-gap: 64px; row-gap: 24px; align-items: center; min-height: 540px; padding: 66px 0 76px; }
+.eyebrow { color: var(--accent); font-size: 12px; line-height: 1.5; font-weight: 700; text-transform: uppercase; }
+.name-block, .bio, .hero-actions, .portrait-shell { position: relative; z-index: 1; }
+.name-block { grid-column: 1; grid-row: 1; align-self: end; }
+h1 { max-width: 720px; margin-top: 14px; margin-bottom: 18px; font-size: 64px; line-height: 1.08; font-weight: 650; overflow-wrap: anywhere; }
+.role { font-size: 20px; line-height: 1.4; font-weight: 600; }
+.institution { margin-top: 4px; color: var(--muted); font-size: 16px; line-height: 1.55; }
+.bio { grid-column: 1; grid-row: 2; align-self: start; max-width: 690px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.bio p + p { margin-top: 10px; }
+.hero-actions { grid-column: 1; grid-row: 3; align-self: start; }
+.primary-links { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; }
+.work-link, .cv-link, .social-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; }
+.primary-action { padding: 0 17px; border-radius: var(--radius); background: var(--ink); color: #fff; }
+.primary-action:hover { color: #fff; background: #303235; }
+.work-link { color: var(--accent); border-bottom: 1px solid #c8d8e7; }
 .work-link span { margin-left: 9px; }
-.cv-link { display: inline-flex; align-items: center; gap: 8px; padding: 5px 11px; font-size: 12px; border: 1px solid #cfd7dd; border-radius: 5px; }
-.social-links { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 20px; margin-top: 21px; }
-.social-links a, .social-links .unavailable { font-size: 12px; }
-.link-arrow { font-size: .95em; margin-left: 3px; }
-.unavailable { color: var(--soft); cursor: default; }
-.cv-link.unavailable { border-style: dashed; }
-.portrait-shell { grid-column: 2; grid-row: 1 / span 3; padding-top: 9px; }
-.portrait-frame { aspect-ratio: 4 / 5; background: #ecf0f2; border-radius: 8px; position: relative; overflow: hidden; border: 1px solid #dde5e9; }
-.portrait-frame img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 2; }
-.portrait-placeholder { height: 100%; width: 100%; position: absolute; display: flex; align-items: center; justify-content: center; }
-.portrait-placeholder::before, .portrait-placeholder::after { content: ""; position: absolute; border: 1px solid #d2dde4; border-radius: 50%; width: 124px; height: 124px; }
-.portrait-placeholder::after { width: 158px; height: 158px; border-color: #dee6eb; }
-.portrait-initials { font-size: 36px; font-weight: 450; letter-spacing: -1px; color: #6b8192; position: relative; }
-.portrait-corner { position: absolute; inset: 12px; border: 1px solid #dce4e9; border-radius: 3px; }
-.portrait-note { margin-top: 10px; display: flex; justify-content: space-between; gap: 8px; font-size: 10px; color: var(--soft); }
+.cv-link:not(.primary-action) { padding: 0 14px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--accent); }
+.social-links { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 22px; margin-top: 18px; }
+.social-links a { color: var(--muted); }
+.link-arrow { font-size: .95em; margin-left: 4px; }
+.unavailable { color: var(--meta); cursor: default; }
+.portrait-shell { grid-column: 2; grid-row: 1 / span 3; justify-self: end; width: min(100%, 354px); }
+.portrait-frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #eef2f6; box-shadow: var(--shadow-soft); }
+.portrait-frame img { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; }
+.portrait-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.portrait-placeholder::before, .portrait-placeholder::after { content: ""; position: absolute; width: 126px; height: 126px; border: 1px solid #d3dee8; border-radius: 50%; }
+.portrait-placeholder::after { width: 166px; height: 166px; border-color: #e1e8ee; }
+.portrait-initials { position: relative; color: #5d7891; font-size: 38px; font-weight: 600; }
+.portrait-corner { position: absolute; inset: 14px; border: 1px solid #dce5ec; border-radius: 4px; }
+.portrait-note { margin-top: 10px; display: flex; justify-content: space-between; gap: 8px; color: var(--meta); font-size: 12px; }
 .portrait-note .ratio { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-.section { border-top: 1px solid var(--line); padding-top: 39px; padding-bottom: 43px; scroll-margin-top: 15px; }
-.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 27px; }
-.section-number { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; color: var(--soft); letter-spacing: 1.4px; margin-bottom: 6px; }
-h2 { font-size: 27px; font-weight: 550; line-height: 1.3; letter-spacing: -.9px; }
-.section-note { font-size: 11px; line-height: 1.65; color: var(--soft); max-width: 300px; text-align: right; }
-.research-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 27px; }
-.research-item { padding-right: 22px; border-right: 1px solid var(--line); }
-.research-item:last-child { border: 0; padding-right: 0; }
-.research-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; letter-spacing: -.3px; margin-bottom: 8px; }
-.research-item p { color: var(--muted); font-size: 13px; line-height: 1.75; }
-.research-keywords { margin-top: 16px; color: var(--accent); font-size: 10px; font-weight: 500; }
-.publication { display: grid; grid-template-columns: 233px minmax(0,1fr); gap: 29px; align-items: start; padding-bottom: 26px; }
-.publication + .publication { padding-top: 25px; border-top: 1px solid var(--line); }
-.publication:last-child { padding-bottom: 0; }
-.media-frame { position: relative; aspect-ratio: 16 / 10; background: var(--surface); border: 1px solid #e0e6ea; border-radius: 6px; overflow: hidden; }
-.media-frame img { position: absolute; z-index: 2; width: 100%; height: 100%; inset: 0; object-fit: contain; padding: 8px; background: var(--surface); }
-.media-placeholder { height: 100%; width: 100%; position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; color: #5f778a; font-size: 10px; letter-spacing: .2px; }
-.media-placeholder .media-icon { opacity: .7; }
-.media-icon { width: 38px; height: 27px; border: 1px solid #9aafbf; border-radius: 3px; position: relative; }
-.media-icon::before { content: ""; position: absolute; height: 6px; width: 6px; border-radius: 50%; left: 7px; top: 6px; border: 1px solid #9aafbf; }
-.media-icon::after { content: ""; position: absolute; height: 10px; width: 17px; border-left: 1px solid #9aafbf; border-top: 1px solid #9aafbf; transform: rotate(38deg) skew(-15deg); right: 4px; bottom: 2px; }
-.media-corner { position: absolute; top: 9px; left: 11px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; color: #748591; letter-spacing: 1px; }
-.pub-meta { display: flex; align-items: center; gap: 10px; font-size: 10px; color: var(--muted); margin-bottom: 5px; }
-.pub-year { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); }
-.placeholder-tag { background: #edf0f2; padding: 0 5px; border-radius: 3px; font-size: 9px; color: var(--muted); }
-.publication h3 { font-size: 18px; font-weight: 600; letter-spacing: -.3px; line-height: 1.45; margin-bottom: 5px; overflow-wrap: anywhere; }
-.authors { font-size: 12px; color: var(--muted); }
-.author-me { color: var(--ink); font-weight: 600; }
-.venue { font-size: 11px; color: var(--accent); margin-top: 1px; }
-.pub-description { font-size: 12px; color: var(--muted); line-height: 1.75; margin-top: 9px; }
-.item-links { display: flex; gap: 8px 17px; flex-wrap: wrap; margin-top: 10px; font-size: 11px; }
-.item-links a { color: var(--accent); border-bottom: 1px solid #cbd8e2; }
-.item-links a:hover { border-bottom-color: var(--accent); }
-.project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px; }
-.project { min-width: 0; }
-.project .media-frame { aspect-ratio: 16 / 8.8; margin-bottom: 17px; }
-.project .media-frame img { object-fit: contain; padding: 0; }
-.project .media-placeholder { gap: 15px; }
-.project .media-icon { width: 44px; height: 31px; }
-.project-category { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 10px; color: var(--accent); margin-bottom: 5px; }
-.project h3 { font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px; margin-bottom: 8px; }
-.project p { color: var(--muted); font-size: 12px; line-height: 1.8; }
-.timeline { display: grid; gap: 23px; }
-.timeline-item { display: grid; grid-template-columns: 185px 1fr; gap: 28px; }
-.timeline-date { color: var(--soft); font-size: 11px; padding-top: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-.timeline-content { border-left: 1px solid var(--line); padding-left: 25px; position: relative; }
-.timeline-content::before { content: ""; width: 5px; height: 5px; background: #91a6b7; border-radius: 50%; position: absolute; top: 9px; left: -3px; }
-.timeline h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
-.timeline-subtitle { font-size: 12px; color: var(--muted); margin-top: 3px; }
-.timeline-detail { font-size: 12px; color: var(--soft); margin-top: 5px; }
-.honors-timeline .timeline-content { display: grid; grid-template-columns: minmax(220px, 32%) minmax(0,1fr); gap: 24px; align-items: start; }
-.honor-image { aspect-ratio: 16 / 10; background: var(--surface); border: 1px solid #e0e6ea; border-radius: 6px; overflow: hidden; }
+.section { padding: 80px 0; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 28px; }
+.section-number { margin-bottom: 7px; color: var(--meta); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 1.4; }
+h2 { font-size: 32px; line-height: 1.2; font-weight: 650; }
+.section-note { max-width: 320px; text-align: right; color: var(--meta); font-size: 14px; line-height: 1.6; }
+.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.research-item { min-width: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.research-item::before { content: ""; display: block; width: 28px; height: 28px; margin-bottom: 18px; border: 2px solid var(--accent); border-radius: 50%; box-shadow: inset 8px 0 0 var(--accent-soft); }
+.research-item h3 { margin-bottom: 10px; font-size: 18px; line-height: 1.45; font-weight: 650; }
+.research-item p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+.research-keywords { margin-top: 18px; color: var(--accent); font-size: 13px; font-weight: 600; line-height: 1.5; }
+.publication-list { display: grid; gap: 18px; }
+.publication { display: grid; grid-template-columns: 270px minmax(0, 1fr) 104px; gap: 24px; align-items: start; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.media-frame { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-soft); }
+.media-frame img { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: contain; padding: 8px; background: var(--surface-soft); }
+.media-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #657684; font-size: 12px; }
+.media-icon { position: relative; width: 38px; height: 27px; border: 1px solid #9aafbf; border-radius: 4px; }
+.media-icon::before { content: ""; position: absolute; top: 6px; left: 7px; width: 6px; height: 6px; border: 1px solid #9aafbf; border-radius: 50%; }
+.media-icon::after { content: ""; position: absolute; right: 4px; bottom: 2px; width: 17px; height: 10px; border-left: 1px solid #9aafbf; border-top: 1px solid #9aafbf; transform: rotate(38deg) skew(-15deg); }
+.media-corner { position: absolute; top: 9px; left: 11px; color: #748591; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
+.pub-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; color: var(--meta); font-size: 13px; line-height: 1.4; }
+.pub-year { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.placeholder-tag { background: var(--accent-soft); padding: 1px 7px; border-radius: 6px; color: var(--muted); font-size: 12px; }
+.publication h3 { margin-bottom: 6px; font-size: 20px; line-height: 1.4; font-weight: 650; overflow-wrap: anywhere; }
+.authors { color: var(--meta); font-size: 14px; line-height: 1.6; }
+.author-me { color: #141517; font-weight: 650; }
+.venue { margin-top: 2px; color: var(--accent); font-size: 14px; line-height: 1.55; }
+.pub-description { margin-top: 12px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.item-links, .pub-actions { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; }
+.pub-actions { justify-content: flex-end; align-self: start; padding-top: 30px; }
+.item-links a, .pub-actions a { display: inline-flex; align-items: center; min-height: 36px; color: var(--accent); font-weight: 600; border-bottom: 1px solid #c8d8e7; }
+.item-links a:hover, .pub-actions a:hover { border-bottom-color: var(--accent); }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.project { min-width: 0; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-soft); }
+.project .media-frame { aspect-ratio: 16 / 9; margin-bottom: 18px; }
+.project .media-frame img { padding: 0; }
+.project-category { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; color: var(--accent); font-size: 13px; font-weight: 600; }
+.project h3 { margin-bottom: 8px; font-size: 20px; line-height: 1.4; font-weight: 650; }
+.project p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+.timeline { display: grid; gap: 24px; }
+.timeline-item { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 28px; }
+.timeline-date { padding-top: 5px; color: var(--meta); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; }
+.timeline-content { position: relative; padding-left: 26px; border-left: 1px solid var(--line); }
+.timeline-content::before { content: ""; position: absolute; top: 10px; left: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.timeline h3 { font-size: 18px; line-height: 1.45; font-weight: 650; }
+.timeline-subtitle { margin-top: 4px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.timeline-detail { margin-top: 6px; color: var(--meta); font-size: 14px; line-height: 1.65; }
+.honors-timeline { gap: 28px; }
+.honors-timeline .timeline-content { display: grid; grid-template-columns: minmax(280px, 42%) minmax(0, 1fr); gap: 26px; align-items: center; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.honors-timeline .timeline-content::before { display: none; }
+.honor-image { aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-soft); }
 .honor-image img { width: 100%; height: 100%; object-fit: cover; }
 .honor-copy { min-width: 0; }
-.empty-state { color: var(--muted); padding: 24px; border: 1px dashed var(--line); border-radius: 6px; font-size: 13px; }
-.site-footer { border-top: 1px solid var(--line); padding-top: 26px; padding-bottom: 36px; }
-.footer-main { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
-.footer-name { font-weight: 600; font-size: 13px; }
-.footer-description { color: var(--soft); font-size: 11px; margin-top: 3px; }
-.back-top { font-size: 11px; color: var(--muted); }
-.footer-meta { font-size: 10px; color: var(--soft); margin-top: 20px; }
-.noscript-note { max-width: 1040px; margin: 20px auto; padding: 12px; color: #57481e; background: #f6f0dd; font-size: 13px; }
-html[lang="zh-CN"] h1 { letter-spacing: -1px; font-size: 56px; }
-html[lang="zh-CN"] h2 { letter-spacing: 0; font-size: 25px; }
-html[lang="zh-CN"] .eyebrow { letter-spacing: 3px; }
-html[lang="zh-CN"] .bio { line-height: 1.95; }
-html[lang="zh-CN"] .desktop-nav { gap: 24px; }
-@media (min-width: 1450px) { .hero { padding-top: 54px; padding-bottom: 71px; } }
-@media (max-width: 1020px) {
-  .desktop-nav { gap: 15px; }
-  .header-inner { gap: 22px; }
-  .hero { column-gap: 55px; }
+.empty-state { padding: 24px; border: 1px dashed var(--line); border-radius: var(--radius); color: var(--muted); font-size: 15px; }
+.site-footer { padding: 32px 0 44px; border-top: 1px solid var(--line); }
+.footer-main { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.footer-name { font-size: 15px; font-weight: 650; }
+.footer-description { margin-top: 3px; color: var(--meta); font-size: 13px; }
+.back-top { color: var(--muted); font-size: 13px; font-weight: 600; }
+.footer-meta { margin-top: 20px; color: var(--meta); font-size: 12px; }
+.noscript-note { max-width: var(--content-max); margin: 20px auto; padding: 12px 16px; color: #57481e; background: #f6f0dd; font-size: 14px; }
+html[lang="zh-CN"] h1 { font-size: 54px; line-height: 1.16; }
+html[lang="zh-CN"] .bio { line-height: 1.9; }
+@media (hover: hover) and (pointer: fine) {
+  .primary-action, .publication, .project, .research-item { transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
+  .primary-action:hover { transform: translateY(-1px); }
+  .project:hover { transform: translateY(-2px); }
+  .publication:hover, .research-item:hover { border-color: #d2dbe4; box-shadow: var(--shadow-soft); }
 }
-@media (max-width: 900px) {
+@media (max-width: 1099px) {
   .desktop-nav { display: none; }
   .menu-toggle { display: flex; }
-  .hero { grid-template-columns: minmax(0,1fr) 180px; column-gap: 38px; }
-  h1 { font-size: 50px; }
-  .publication { grid-template-columns: 200px minmax(0,1fr); gap: 24px; }
-  .research-grid { gap: 20px; }
-  .research-item { padding-right: 16px; }
+  .hero { grid-template-columns: minmax(0, 1fr) 260px; column-gap: 44px; min-height: 500px; }
+  h1 { font-size: 54px; }
+  html[lang="zh-CN"] h1 { font-size: 46px; }
+  .publication { grid-template-columns: 245px minmax(0, 1fr); }
+  .pub-actions { grid-column: 2; justify-content: flex-start; padding-top: 0; }
+  .honors-timeline .timeline-content { grid-template-columns: minmax(260px, 40%) minmax(0, 1fr); }
 }
-@media (max-width: 640px) {
-  html { scroll-padding-top: 82px; }
+@media (max-width: 767px) {
+  html { scroll-padding-top: 78px; }
   .container { width: calc(100% - 40px); }
-  .header-inner { height: 62px; gap: 12px; }
-  .brand { font-size: 15px; gap: 8px; }
-  .header-tools { gap: 9px; }
-  .language-switch button { min-width: 33px; min-height: 30px; }
-  .draft-note { font-size: 10px; gap: 4px 9px; padding-top: 21px; }
-  .draft-pill { font-size: 9px; }
-  .hero { grid-template-columns: minmax(0,1fr) 106px; gap: 25px 18px; padding-top: 35px; padding-bottom: 39px; }
-  .eyebrow { font-size: 8px; letter-spacing: 1.6px; }
-  h1 { font-size: 38px; letter-spacing: -1.8px; margin-top: 9px; margin-bottom: 11px; }
-  .role { font-size: 12px; }
-  .institution { font-size: 11px; line-height: 1.65; margin-top: 5px; }
-  .portrait-shell { grid-row: 1; grid-column: 2; padding-top: 3px; }
-  .portrait-frame { border-radius: 6px; }
-  .portrait-placeholder::before { width: 66px; height: 66px; }
-  .portrait-placeholder::after { width: 86px; height: 86px; }
-  .portrait-initials { font-size: 25px; }
-  .portrait-corner { inset: 7px; }
-  .portrait-note { margin-top: 6px; font-size: 8px; }
-  .portrait-note .ratio { display: none; }
-  .bio { grid-column: 1 / -1; font-size: 13px; line-height: 1.85; }
-  .hero-actions { grid-column: 1 / -1; padding-top: 0; }
-  .primary-links { gap: 17px; }
-  .social-links { gap: 8px 20px; margin-top: 19px; }
-  .section { padding-top: 30px; padding-bottom: 33px; }
-  .section-head { align-items: flex-start; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-  h2 { font-size: 25px; }
-  .section-number { font-size: 9px; }
-  .section-note { max-width: none; text-align: left; font-size: 10px; }
-  .research-grid { grid-template-columns: 1fr; gap: 20px; }
-  .research-item { border-right: 0; padding-right: 0; padding-left: 15px; border-left: 1px solid #cedae3; }
-  .research-item:last-child { border-left: 1px solid #cedae3; }
-  .research-item h3 { font-size: 15px; margin-bottom: 5px; }
-  .research-item p { font-size: 12px; }
-  .research-keywords { margin-top: 8px; }
-  .publication { grid-template-columns: 1fr; gap: 17px; padding-bottom: 24px; }
-  .publication + .publication { padding-top: 24px; }
-  .publication .media-frame { aspect-ratio: 16 / 8.5; }
-  .publication h3 { font-size: 17px; }
-  .pub-description { font-size: 12px; }
-  .item-links { margin-top: 13px; gap: 10px 21px; }
-  .project-grid { grid-template-columns: 1fr; gap: 30px; }
-  .project .media-frame { margin-bottom: 15px; }
-  .project h3 { font-size: 17px; }
-  .timeline { gap: 25px; }
-  .timeline-item { grid-template-columns: 1fr; gap: 7px; }
-  .timeline-date { padding-left: 18px; font-size: 10px; }
-  .timeline-content { padding-left: 17px; }
-  .honors-timeline .timeline-content { grid-template-columns: 1fr; gap: 13px; }
+  .header-inner { height: 60px; gap: 12px; }
+  .brand { font-size: 15px; }
+  .header-tools { gap: 8px; }
+  .language-switch button { min-width: 42px; min-height: 34px; font-size: 12px; }
+  .mobile-nav ul { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: minmax(0, 1fr) 128px; align-items: start; gap: 22px 18px; min-height: 0; padding: 42px 0 48px; }
+  .eyebrow { font-size: 11px; }
+  h1 { margin-top: 10px; margin-bottom: 12px; font-size: 40px; line-height: 1.15; }
+  html[lang="zh-CN"] h1 { font-size: 36px; }
+  .role { font-size: 18px; }
+  .institution { font-size: 14px; }
+  .portrait-shell { grid-column: 2; grid-row: 1; width: 128px; justify-self: end; }
+  .portrait-placeholder::before { width: 68px; height: 68px; }
+  .portrait-placeholder::after { width: 90px; height: 90px; }
+  .portrait-initials { font-size: 26px; }
+  .portrait-corner { inset: 8px; }
+  .bio, .hero-actions { grid-column: 1 / -1; }
+  .bio { font-size: 16px; }
+  .primary-links { align-items: flex-start; }
+  .section { padding: 48px 0; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 24px; }
+  h2 { font-size: 28px; }
+  .section-note { max-width: none; text-align: left; font-size: 13px; }
+  .research-grid { grid-template-columns: 1fr; gap: 14px; }
+  .research-item { padding: 20px; }
+  .publication { grid-template-columns: 1fr; gap: 18px; padding: 18px; }
+  .publication .media-frame { aspect-ratio: 16 / 9; }
+  .publication h3 { font-size: 18px; }
+  .authors, .venue { font-size: 14px; }
+  .pub-description { font-size: 14px; }
+  .pub-actions { grid-column: 1; justify-content: flex-start; }
+  .project-grid { grid-template-columns: 1fr; }
+  .timeline { gap: 26px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+  .timeline-date { padding-left: 18px; font-size: 12px; }
+  .timeline-content { padding-left: 18px; }
+  .honors-timeline .timeline-content { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
   .honor-image { aspect-ratio: 16 / 9; }
-  .timeline h3 { font-size: 15px; }
-  .timeline-subtitle, .timeline-detail { font-size: 12px; }
   .footer-main { align-items: flex-start; }
-  .footer-description { font-size: 10px; max-width: 210px; }
-  html[lang="zh-CN"] h1 { font-size: 35px; letter-spacing: -.5px; }
-  html[lang="zh-CN"] h2 { font-size: 23px; }
 }
-@media (max-width: 360px) {
+@media (max-width: 374px) {
   .container { width: calc(100% - 32px); }
-  .hero { grid-template-columns: minmax(0,1fr) 86px; column-gap: 13px; }
-  h1 { font-size: 33px; }
-  html[lang="zh-CN"] h1 { font-size: 31px; }
-  .brand { font-size: 13px; }
-  .header-tools { gap: 6px; }
+  .hero { grid-template-columns: 1fr; }
+  .portrait-shell { grid-column: 1; grid-row: 1; width: 118px; justify-self: start; }
+  .name-block { grid-row: 2; }
+  h1 { font-size: 36px; }
+  html[lang="zh-CN"] h1 { font-size: 34px; }
+  .brand { font-size: 14px; }
+  .language-switch button { min-width: 38px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
 @media print {
   .site-header, .draft-note, .back-top, .footer-meta, .skip-link { display: none !important; }
   body { background: #fff; font-size: 11px; }
   .container { width: 100%; }
-  .hero { padding-top: 0; padding-bottom: 22px; }
+  .hero { min-height: 0; padding: 0 0 22px; }
   .section { padding: 20px 0; }
   .publication, .project, .timeline-item { break-inside: avoid; }
   a { text-decoration: underline; }
@@ -262,18 +250,18 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
 <a class="skip-link" href="#main">跳转到主要内容</a>
 <header class="site-header"><div class="container header-inner">
   <a class="brand" href="#about"><span class="brand-mark" aria-hidden="true"></span>沈海涛</a>
-  <nav class="desktop-nav" aria-label="展开导航"><a class="nav-link" href="#about" aria-current="location">关于</a><a class="nav-link" href="#research">研究方向</a><a class="nav-link" href="#publications">论文</a><a class="nav-link" href="#honors">荣誉</a><a class="nav-link" href="#education">教育经历</a></nav>
+  <nav class="desktop-nav" aria-label="展开导航"><a class="nav-link" href="#research" aria-current="location">研究方向</a><a class="nav-link" href="#publications">论文</a><a class="nav-link" href="#honors">荣誉</a><a class="nav-link" href="#education">背景</a></nav>
   <div class="header-tools"><div class="language-switch" role="group" aria-label="页面语言">
-    <button type="button" lang="en" data-set-language="en" aria-pressed="false">EN</button>
     <button type="button" lang="zh-CN" data-set-language="zh" aria-pressed="true">中文</button>
+    <button type="button" lang="en" data-set-language="en" aria-pressed="false">EN</button>
   </div><button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="展开导航" data-menu-toggle><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
-</div><nav class="mobile-nav" id="mobile-nav" aria-label="展开导航" hidden><div class="container"><ul><li><a class="nav-link" href="#about">关于</a></li><li><a class="nav-link" href="#research">研究方向</a></li><li><a class="nav-link" href="#publications">论文</a></li><li><a class="nav-link" href="#honors">荣誉</a></li><li><a class="nav-link" href="#education">教育经历</a></li></ul></div></nav></header>
+</div><nav class="mobile-nav" id="mobile-nav" aria-label="展开导航" hidden><div class="container"><ul><li><a class="nav-link" href="#research">研究方向</a></li><li><a class="nav-link" href="#publications">论文</a></li><li><a class="nav-link" href="#honors">荣誉</a></li><li><a class="nav-link" href="#education">背景</a></li></ul></div></nav></header>
 <main class="container" id="main" tabindex="-1">
 
 <section class="hero" id="about" aria-label="关于">
   <div class="name-block"><p class="eyebrow">个人主页</p><h1>沈海涛</h1><p class="role">研究生</p><p class="institution">中国人民大学信息学院</p></div>
   <div class="bio"><p>我是中国人民大学信息学院研究生，研究兴趣集中在具身智能、机器人学习以及视觉-语言-动作模型等方向。</p><p>近期工作关注 VLA 模型中的潜在动作监督、策略恢复、测试时验证以及密集具身思维链监督。</p></div>
-  <div class="hero-actions"><div class="primary-links"><a class="work-link" href="#publications">查看论文<span aria-hidden="true">↓</span></a><span class="unavailable cv-link" aria-disabled="true" title="尚未添加链接，请在 SITE_CONTENT 中填写。">个人简历</span></div><div class="social-links"><a class="" href="mailto:shenhaitao@ruc.edu.cn">邮箱<span aria-hidden="true" class="link-arrow">↗</span></a></div></div>
+  <div class="hero-actions"><div class="primary-links"><a class="work-link" href="#publications">查看论文<span aria-hidden="true">↓</span></a></div><div class="social-links"><a class="" href="mailto:shenhaitao@ruc.edu.cn">邮箱<span aria-hidden="true" class="link-arrow">↗</span></a></div></div>
   <aside class="portrait-shell"><div class="portrait-frame" role="img" aria-label="沈海涛的个人头像">
     <div class="portrait-placeholder" aria-hidden="true"><span class="portrait-corner"></span><span class="portrait-initials">HS</span></div>
     <img src="assets/images/avatar.jpg" alt="" style="object-position:58% 42%" decoding="async" data-fallback-image>
@@ -291,37 +279,37 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
     <h3>From Pixels to Tokens: A Systematic Study of Latent Action Supervision for Vision-Language-Action Models</h3><p class="authors">Yihan Lin, Haoyang Li, Yang Li, <span class="author-me">沈海涛</span>, Yihan Zhao, Chao Shao, Jing Zhang</p><p class="venue">ICML 2026 Spotlight</p>
-    <p class="pub-description">系统研究 VLA 模型中的潜在动作监督，在统一基线下比较基于图像和基于动作的 latent action 方案。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=VMsumctGvg" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a><a class="" href="https://github.com/RUCKBReasoning/From_Pixels_to_Tokens" target="_blank" rel="noopener noreferrer">代码<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="ZR-0 论文概览图">
+    <p class="pub-description">系统研究 VLA 模型中的潜在动作监督，在统一基线下比较基于图像和基于动作的 latent action 方案。</p></div><div class="pub-actions"><a class="" href="https://openreview.net/forum?id=VMsumctGvg" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a><a class="" href="https://github.com/RUCKBReasoning/From_Pixels_to_Tokens" target="_blank" rel="noopener noreferrer">代码<span aria-hidden="true" class="link-arrow">↗</span></a></div></article><article class="publication"><div class="media-frame" role="img" aria-label="ZR-0 论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">02</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/zr0.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
     <h3>Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision</h3><p class="authors">Haoyang Li, Guanlin Li, Youhe Feng, Chen Zhao, Zhuoran Wang, Yang Li, Qizhe Wei, Shifeng Bao, <span class="author-me">沈海涛</span>, Yihan Zhao, Tong Yang, Jing Zhang</p><p class="venue">arXiv 2026</p>
-    <p class="pub-description">ZR-0 是一个 2.6B 端到端 VLA 模型，通过密集具身思维链监督进行训练，面向跨本体机器人学习。</p><div class="item-links"><a class="" href="https://arxiv.org/abs/2606.30552" target="_blank" rel="noopener noreferrer">arXiv<span aria-hidden="true" class="link-arrow">↗</span></a><a class="" href="https://github.com/RUCKBReasoning/ZR-0" target="_blank" rel="noopener noreferrer">代码<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="测试时验证 VLA 策略论文概览图">
+    <p class="pub-description">ZR-0 是一个 2.6B 端到端 VLA 模型，通过密集具身思维链监督进行训练，面向跨本体机器人学习。</p></div><div class="pub-actions"><a class="" href="https://arxiv.org/abs/2606.30552" target="_blank" rel="noopener noreferrer">arXiv<span aria-hidden="true" class="link-arrow">↗</span></a><a class="" href="https://github.com/RUCKBReasoning/ZR-0" target="_blank" rel="noopener noreferrer">代码<span aria-hidden="true" class="link-arrow">↗</span></a></div></article><article class="publication"><div class="media-frame" role="img" aria-label="测试时验证 VLA 策略论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">03</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/flow-support-weighted-proposals.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
     <h3>Flow-Support-Weighted Proposals for Test-Time Verified VLA Policies</h3><p class="authors">Chen Zhao, <span class="author-me">沈海涛</span>, Zipeng Ye, Guanlin Li, Yuchen Xie, Jing Zhang</p><p class="venue">ICLR 2027 投稿</p>
-    <p class="pub-description">该工作研究测试时验证的 VLA 策略，通过 flow-support-weighted proposals 提升动作多样性，同时保持动作正确性。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=8y0lWKcHav" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="双指夹爪操作论文概览图">
+    <p class="pub-description">该工作研究测试时验证的 VLA 策略，通过 flow-support-weighted proposals 提升动作多样性，同时保持动作正确性。</p></div><div class="pub-actions"><a class="" href="https://openreview.net/forum?id=8y0lWKcHav" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></article><article class="publication"><div class="media-frame" role="img" aria-label="双指夹爪操作论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">04</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/two-finger-gripper-manipulation.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
     <h3>Enabling a Unified Cross-Domain Representation for Two-Finger Gripper Manipulation via Interaction-Centric Modeling</h3><p class="authors">Guanlin Li, Shifeng Bao, Yihan Zhao, <span class="author-me">沈海涛</span>, Haoyang Li, Chen Zhao, Tong Yang, Jing Zhang</p><p class="venue">ICRA 2027 投稿</p>
-    <p class="pub-description">该工作研究面向双指夹爪操作的交互中心建模，旨在构建跨领域统一表示以支持机器人操作。</p><div class="item-links"></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="RoboRecover 论文概览图">
+    <p class="pub-description">该工作研究面向双指夹爪操作的交互中心建模，旨在构建跨领域统一表示以支持机器人操作。</p></div></article><article class="publication"><div class="media-frame" role="img" aria-label="RoboRecover 论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">05</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/roborecover.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
     <h3>RoboRecover: Benchmarking Robot Policy Recovery under Execution Deviations</h3><p class="authors">Yang Li, Chen Zhao, Zhuoran Wang, Jiankang Wang, Chao Shao, Yihan Lin, <span class="author-me">沈海涛</span>, Jing Zhang</p><p class="venue">AAAI 2027 投稿</p>
-    <p class="pub-description">RoboRecover 评测机器人策略从执行偏差导致的中间状态中恢复的能力，补充传统 clean-start 成功率评估。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=qnnQlLWxCr" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article><article class="publication"><div class="media-frame" role="img" aria-label="DP-GST 论文概览图">
+    <p class="pub-description">RoboRecover 评测机器人策略从执行偏差导致的中间状态中恢复的能力，补充传统 clean-start 成功率评估。</p></div><div class="pub-actions"><a class="" href="https://openreview.net/forum?id=qnnQlLWxCr" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></article><article class="publication"><div class="media-frame" role="img" aria-label="DP-GST 论文概览图">
       <div class="media-placeholder" aria-hidden="true"><span class="media-corner">06</span><span class="media-icon"></span><span>论文配图</span></div>
       <img src="assets/images/publications/dp-gst.png" alt="" loading="lazy" decoding="async" data-fallback-image>
     </div><div class="publication-text">
     <div class="pub-meta"><span class="pub-year">2026</span></div>
     <h3>DP-GST: Diffusion-based Privacy-preserving Group Steiner Tree Search</h3><p class="authors">Jiakang Li, <span class="author-me">沈海涛</span>, Yahui Sun, Xiaoyao Feng, Xiaoqing Xiang, Wei Lu</p><p class="venue">AAAI 2027 投稿</p>
-    <p class="pub-description">DP-GST 将图神经网络与扩散建模结合，用于差分隐私约束下的隐私保护群体 Steiner 树搜索。</p><div class="item-links"><a class="" href="https://openreview.net/forum?id=5cgTg7eKPM" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></div></article></div>
+    <p class="pub-description">DP-GST 将图神经网络与扩散建模结合，用于差分隐私约束下的隐私保护群体 Steiner 树搜索。</p></div><div class="pub-actions"><a class="" href="https://openreview.net/forum?id=5cgTg7eKPM" target="_blank" rel="noopener noreferrer">OpenReview<span aria-hidden="true" class="link-arrow">↗</span></a></div></article></div>
 </section>
 <section class="section" id="honors" aria-label="荣誉奖项"><div class="section-head"><div><div class="section-number" aria-hidden="true">03 / HONORS</div><h2>荣誉奖项</h2></div><p class="section-note">机器人竞赛与相关奖项。</p></div><div class="timeline honors-timeline"><article class="timeline-item">
       <p class="timeline-date">2026</p><div class="timeline-content">
@@ -337,7 +325,7 @@ html[lang="zh-CN"] .desktop-nav { gap: 24px; }
       <div class="honor-copy"><h3>首届世界人形机器人运动会</h3><p class="timeline-subtitle">场景赛-拆药分装 - 银牌</p>
       <p class="timeline-detail">在场景赛拆药分装项目中获得银牌。</p></div></div></article></div></section>
 
-<section class="section" id="education" aria-label="教育经历"><div class="section-head"><div><div class="section-number" aria-hidden="true">04 / EDUCATION</div><h2>教育经历</h2></div><p class="section-note">学术与教育背景</p></div><div class="timeline"><article class="timeline-item">
+<section class="section" id="education" aria-label="背景"><div class="section-head"><div><div class="section-number" aria-hidden="true">04 / BACKGROUND</div><h2>背景</h2></div><p class="section-note">学术与教育背景</p></div><div class="timeline"><article class="timeline-item">
       <p class="timeline-date">2026.9 - 至今</p><div class="timeline-content">
       <h3>中国人民大学</h3><p class="timeline-subtitle">信息学院研究生</p>
       <p class="timeline-detail">研究兴趣包括具身智能、VLA 模型、机器人学习与策略评测。</p></div></article><article class="timeline-item">
@@ -808,8 +796,8 @@ if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTE
   "use strict";
   const UI = {
     en: {
-      about: "About", research: "Research", publications: "Publications", honors: "Honors", projects: "Projects", education: "Education", experience: "Experience",
-      researchTitle: "Research interests", publicationsTitle: "Selected publications", honorsTitle: "Honors & awards", projectsTitle: "Research projects", educationTitle: "Education", experienceTitle: "Work & internships",
+      about: "About", research: "Research", publications: "Publications", honors: "Honors", projects: "Projects", education: "Background", experience: "Experience",
+      researchTitle: "Research interests", publicationsTitle: "Selected publications", honorsTitle: "Honors & awards", projectsTitle: "Research projects", educationTitle: "Background", experienceTitle: "Work & internships",
       preview: "LAYOUT PREVIEW", previewNote: "Placeholder content · Replace before publishing your profile.",
       eyebrow: "Personal website", work: "View publications", cv: "Curriculum vitae", portrait: "Portrait placeholder",
       sample: "Placeholder", researchNote: "Example topics — edit these to reflect your research.",
@@ -821,8 +809,8 @@ if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTE
       technicalNote: "Framework preview · All biographical and publication details are placeholders.",
     },
     zh: {
-      about: "关于", research: "研究方向", publications: "论文", honors: "荣誉", projects: "科研项目", education: "教育经历", experience: "工作经历",
-      researchTitle: "研究方向", publicationsTitle: "代表论文", honorsTitle: "荣誉奖项", projectsTitle: "科研项目", educationTitle: "教育经历", experienceTitle: "工作与实习",
+      about: "关于", research: "研究方向", publications: "论文", honors: "荣誉", projects: "科研项目", education: "背景", experience: "工作经历",
+      researchTitle: "研究方向", publicationsTitle: "代表论文", honorsTitle: "荣誉奖项", projectsTitle: "科研项目", educationTitle: "背景", experienceTitle: "工作与实习",
       preview: "框架预览", previewNote: "当前为占位内容，正式发布个人资料前请替换。",
       eyebrow: "个人主页", work: "查看论文", cv: "个人简历", portrait: "头像占位",
       sample: "占位示例", researchNote: "以下方向用于演示，可替换为你的真实研究兴趣。",
@@ -860,7 +848,17 @@ if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTE
     const outside = /^(https?:)?\/\//i.test(href);
     return `<a class="${cssClass}" href="${esc(href)}"${outside ? ' target="_blank" rel="noopener noreferrer"' : ""}>${label}<span aria-hidden="true" class="link-arrow">↗</span></a>`;
   }
-  function links(items, lang, cssClass) { return `<div class="${cssClass}">${(items || []).map((item) => link(item, lang)).join("")}</div>`; }
+  function validLinks(items, lang) {
+    return (items || []).filter((item) => {
+      const rawUrl = typeof item.url === "string" ? item.url : text(item.url, lang);
+      return Boolean(safeUrl(rawUrl));
+    });
+  }
+  function links(items, lang, cssClass) {
+    const available = validLinks(items, lang);
+    if (!available.length) return "";
+    return `<div class="${cssClass}">${available.map((item) => link(item, lang)).join("")}</div>`;
+  }
   function authors(value, lang) {
     const raw = text(value, lang);
     return esc(raw).replace(/Haitao Shen|沈海涛/g, (match) => `<span class="author-me">${match}</span>`);
@@ -909,22 +907,24 @@ if (typeof module !== "undefined" && module.exports) module.exports = SITE_CONTE
     const projects = visible(data.projects);
     const education = visible(data.education);
     const experience = visible(data.experience);
-    const sections = ["about", "research", "publications"];
+    const sections = ["research", "publications"];
     if (honors.length) sections.push("honors");
     if (projects.length) sections.push("projects");
     if (education.length) sections.push("education");
     if (experience.length) sections.push("experience");
-    const navigation = sections.map((id) => `<a class="nav-link" href="#${id}"${id === "about" ? ' aria-current="location"' : ""}>${esc(ui[id])}</a>`).join("");
-    const sectionNumber = (id) => `${String(sections.filter((section) => section !== "about").indexOf(id) + 1).padStart(2, "0")} / ${id.toUpperCase()}`;
+    const navigation = sections.map((id) => `<a class="nav-link" href="#${id}"${id === "research" ? ' aria-current="location"' : ""}>${esc(ui[id])}</a>`).join("");
+    const sectionNumber = (id) => `${String(sections.indexOf(id) + 1).padStart(2, "0")} / ${id === "education" ? "BACKGROUND" : id.toUpperCase()}`;
     const portrait = safeUrl(profile.portrait);
     const cv = text(profile.cv, lang) || text(profile.cv, lang === "en" ? "zh" : "en");
+    const cvUrl = safeUrl(cv);
+    const profileLinks = links(profile.links, lang, "social-links");
     return `<a class="skip-link" href="#main">${esc(ui.skip)}</a>
 <header class="site-header"><div class="container header-inner">
   <a class="brand" href="#about"><span class="brand-mark" aria-hidden="true"></span>${name}</a>
   <nav class="desktop-nav" aria-label="${esc(ui.menu)}">${navigation}</nav>
   <div class="header-tools"><div class="language-switch" role="group" aria-label="${esc(ui.language)}">
-    <button type="button" lang="en" data-set-language="en" aria-pressed="${lang === "en"}">EN</button>
     <button type="button" lang="zh-CN" data-set-language="zh" aria-pressed="${lang === "zh"}">中文</button>
+    <button type="button" lang="en" data-set-language="en" aria-pressed="${lang === "en"}">EN</button>
   </div><button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="${esc(ui.menu)}" data-menu-toggle><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
 </div><nav class="mobile-nav" id="mobile-nav" aria-label="${esc(ui.menu)}" hidden><div class="container"><ul>${sections.map((id) => `<li><a class="nav-link" href="#${id}">${esc(ui[id])}</a></li>`).join("")}</ul></div></nav></header>
 <main class="container" id="main" tabindex="-1">
@@ -932,7 +932,7 @@ ${draft ? `<div class="draft-note"><span class="draft-pill">${esc(ui.preview)}</
 <section class="hero" id="about" aria-label="${esc(ui.about)}">
   <div class="name-block"><p class="eyebrow">${esc(ui.eyebrow)}</p><h1>${name}</h1><p class="role">${esc(text(profile.role, lang))}</p><p class="institution">${esc(text(profile.institution, lang))}</p></div>
   <div class="bio">${(profile.bio || []).map((paragraph) => `<p>${esc(text(paragraph, lang))}</p>`).join("")}</div>
-  <div class="hero-actions"><div class="primary-links"><a class="work-link" href="#publications">${esc(ui.work)}<span aria-hidden="true">↓</span></a>${link({ label: ui.cv, url: cv }, lang, "cv-link")}</div>${links(profile.links, lang, "social-links")}</div>
+  <div class="hero-actions"><div class="primary-links">${cvUrl ? link({ label: ui.cv, url: cvUrl }, lang, "cv-link primary-action") : ""}<a class="work-link" href="#publications">${esc(ui.work)}<span aria-hidden="true">↓</span></a></div>${profileLinks}</div>
   <aside class="portrait-shell"><div class="portrait-frame" role="img" aria-label="${esc(portrait ? text(profile.portraitAlt, lang) : ui.portrait)}">
     <div class="portrait-placeholder" aria-hidden="true"><span class="portrait-corner"></span><span class="portrait-initials">${esc(profile.monogram || "YN")}</span></div>
     ${portrait ? `<img src="${esc(portrait)}" alt="" style="object-position:${esc(/^[-\d.%\s]+$/.test(profile.portraitPosition || "") ? profile.portraitPosition : "50% 40%")}" decoding="async" data-fallback-image>` : ""}
@@ -947,7 +947,7 @@ ${draft ? `<div class="draft-note"><span class="draft-pill">${esc(ui.preview)}</
   ${papers.length ? `<div class="publication-list">${papers.map((item, i) => `<article class="publication">${media(item, lang, "paper", i)}<div class="publication-text">
     <div class="pub-meta"><span class="pub-year">${esc(item.year)}</span>${item.placeholder ? `<span class="placeholder-tag">${esc(ui.sample)}</span>` : ""}</div>
     <h3>${esc(text(item.title, lang))}</h3><p class="authors">${authors(item.authors, lang)}</p><p class="venue">${esc(text(item.venue, lang))}</p>
-    <p class="pub-description">${esc(text(item.description, lang))}</p>${links(item.links, lang, "item-links")}</div></article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
+    <p class="pub-description">${esc(text(item.description, lang))}</p></div>${links(item.links, lang, "pub-actions")}</article>`).join("")}</div>` : `<p class="empty-state">${esc(ui.empty)}</p>`}
 </section>
 ${honors.length ? `<section class="section" id="honors" aria-label="${esc(ui.honorsTitle)}">${sectionHead(sectionNumber("honors"), ui.honorsTitle, ui.honorsNote)}${honorsTimeline(honors, lang)}</section>` : ""}
 ${projects.length ? `<section class="section" id="projects" aria-label="${esc(ui.projectsTitle)}">
